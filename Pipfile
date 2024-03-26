@@ -1,0 +1,25 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+jsonpath = "*"
+pymysql = "*"
+openpyxl = "*"
+path = "*"
+requests = "*"
+pytest = "*"
+gevent = "*"
+selenium = "*"
+paramiko = "*"
+bs4 = "*"
+pillow = "*"
+install = "*"
+pytest-xdist = "*"
+allure-pytest = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"
