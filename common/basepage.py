@@ -12,7 +12,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import NoSuchElementException
-
+import random
 
 
 class BasePage:
@@ -135,16 +135,18 @@ class BasePage:
         else:
             log.info('成功切换到新窗口')
 
+    def remover_activity_bar(self):
+        activity_bar_loc = By.ID, 'activity_bar'
+        try:
+            element_remove_bar = self.driver.find_element(*activity_bar_loc)
+            self.driver.execute_script("arguments[0].parentNode.removeChild(arguments[0]);", element_remove_bar)
+        except NoSuchElementException:
+            print("未找到指定元素 activity_bar")
 
-def remover_activity_bar(driver):
-    activity_bar_loc = By.ID, 'activity_bar'
-    try:
-        element_remove_bar = driver.find_element(*activity_bar_loc)
-        driver.execute_script("arguments[0].parentNode.removeChild(arguments[0]);", element_remove_bar)
-    except NoSuchElementException:
-        print("未找到指定元素 activity_bar")
-
-
+    def click_random_commodity(self):
+        all_commoditys = By.XPATH, '//a[@data-datalayer-category="PlusSizeGowns"]'
+        rd = random.randint(0, 60)
+        self.click_element(all_commoditys, '随机 点击BD列表页商品', rd)
 
 
 if __name__ == '__main__':
