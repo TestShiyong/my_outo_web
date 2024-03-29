@@ -129,7 +129,7 @@ def get_swatch_urls():
 
 def get_rts_urls():
     page_type = 'rts'
-    return handle_url(PRO_BASE_URL, PRE_BASE_URL, SWATCH_PAGES, page_type)
+    return handle_url(PRO_BASE_URL, PRE_BASE_URL, RTS_PAGES, page_type)
 
 
 if __name__ == '__main__':

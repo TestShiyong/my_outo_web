@@ -18,7 +18,7 @@ def take_screenshot(url, file_path, lock):
     """
     # 设置Chrome选项，运行在无界面模式（无GUI）
     options = webdriver.ChromeOptions()
-    options.add_argument('--headless')
+    # options.add_argument('--headless')
     driver = webdriver.Chrome(options=options)
 
     try:
@@ -121,7 +121,6 @@ def main(item, page_img_dir):
     else:
         print(f"检测到页面差异,正在生成带标记的预览差异图像：PRE_URL=({pre_environment_url}),PRO_URL=({online_environment_url})")
         mark_differences(pre_img, online_img, diff_image_path)
-        raise Exception()
 
 
 if __name__ == "__main__":
