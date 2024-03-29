@@ -18,6 +18,7 @@ pillow = "*"
 install = "*"
 pytest-xdist = "*"
 allure-pytest = "*"
+opencv-python = "*"
 
 [dev-packages]
 
