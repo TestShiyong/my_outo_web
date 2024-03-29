@@ -18,7 +18,7 @@ def take_screenshot(url, file_path, lock):
     """
     # 设置Chrome选项，运行在无界面模式（无GUI）
     options = webdriver.ChromeOptions()
-    # options.add_argument('--headless')
+    options.add_argument('--headless')
     driver = webdriver.Chrome(options=options)
 
     try:
