@@ -40,13 +40,14 @@ ACC_PAGES = {'list_page_all_acc_url': '/all/accessories',
              'list_page_garment_bags': '/all/garment-bags'}
 
 # SAMPLE
-SAMPLE_PAGES = {'list_page_all_sample_url': '/all/sample-dresses?current_in_stock:yes',
-                'list_page_wd_sample_url': '/all/sample-brides?sort_by:popularity&current_in_stock:yes',
-                'list_page_bd_sample_url': '/all/sample-bridesmaids?sort_by:popularity&current_in_stock:yes',
-                'list_page_maternity_sample_url': '/all/sample-maternity?sort_by:popularity&current_in_stock:yes',
-                'list_page_modest_sample_url': '/all/sample-modest?sort_by:popularity&current_in_stock:yes',
-                'list_page_mother_sample_url': '/all/sample-mother-of-the-bride?sort_by:popularity&current_in_stock:yes',
-                'list_page_junior_sample_url': '/all/sample-junior-bridesmaid-dresses?sort_by:popularity&current_in_stock:yes'}
+SAMPLE_PAGES = {
+    # 'list_page_all_sample_url': '/all/sample-dresses?current_in_stock=yes',
+                'list_page_wd_sample_url': '/all/sample-brides?current_in_stock=yes',
+                'list_page_bd_sample_url': '/all/sample-bridesmaids?sort_by=popularity&current_in_stock=yes',
+                'list_page_maternity_sample_url': 'sort_by=popularity&current_in_stock=yes',
+                'list_page_modest_sample_url': '/all/sample-modest?sort_by=popularity&current_in_stock=yes',
+                'list_page_mother_sample_url': '/all/sample-mother-of-the-bride?sort_by=popularity&current_in_stock=yes',
+                'list_page_junior_sample_url': '/all/sample-junior-bridesmaid-dresses?sort_by=popularity&current_in_stock=yes'}
 
 # SWATCH
 SWATCH_PAGES = {'list_page_swatch_fabric_url': '/swatches-fabric',

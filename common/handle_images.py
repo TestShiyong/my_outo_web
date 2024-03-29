@@ -18,7 +18,7 @@ def take_screenshot(url, file_path, lock):
     """
     # 设置Chrome选项，运行在无界面模式（无GUI）
     options = webdriver.ChromeOptions()
-    options.add_argument('--headless')
+    # options.add_argument('--headless')
     driver = webdriver.Chrome(options=options)
 
     try:
@@ -125,4 +125,5 @@ def main(item, page_img_dir):
 
 
 if __name__ == "__main__":
-    main()
+    lock = threading.Lock()
+    take_screenshot('https://www.azazie.com/all/sample-brides?sort_by=popularity&current_in_stock=yes','./ccc.png',lock)

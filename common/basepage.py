@@ -11,6 +11,8 @@ from selenium.webdriver.remote.webdriver import WebDriver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
+from selenium.common.exceptions import NoSuchElementException
+
 
 
 class BasePage:
@@ -136,8 +138,13 @@ class BasePage:
 
 def remover_activity_bar(driver):
     activity_bar_loc = By.ID, 'activity_bar'
-    element_remove_bar = driver.find_element(*activity_bar_loc)
-    driver.execute_script("arguments[0].parentNode.removeChild(arguments[0]);", element_remove_bar)
+    try:
+        element_remove_bar = driver.find_element(*activity_bar_loc)
+        driver.execute_script("arguments[0].parentNode.removeChild(arguments[0]);", element_remove_bar)
+    except NoSuchElementException:
+        print("未找到指定元素 activity_bar")
+
+
 
 
 if __name__ == '__main__':
