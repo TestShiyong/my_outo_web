@@ -27,10 +27,13 @@ def take_screenshot(url, list_screenshot_path, detail_screenshot_path):
         driver.set_window_size(1920, 1080)  # 设置窗口大小为1920x1080像素
         driver.get(url)
         base_page.remover_activity_bar()
-
+        # 截图列表页
         base_page.driver.save_screenshot(list_screenshot_path)
         base_page.click_random_commodity()
+        # 截图详情页
         base_page.driver.save_screenshot(detail_screenshot_path)
+    except Exception:
+        print('webdriver异常 。。。。。。。。。。。。。。。。。。。。。。。。。。。')
 
     finally:
         driver.quit()
@@ -79,23 +82,14 @@ def mark_differences(pre_img, online_img, diff_image_path, threshold=30):
     combined_img.save(diff_image_path)
 
 
-def run_comparison(page_name, pro_url, pre_url, page_type, screenshots_path):
-    pre_screenshot_path = os.path.join(screenshots_path, page_type)
-    online_screenshot_path = os.path.join(screenshots_path, page_type)
-    diff_image_path = os.path.join(screenshots_path, page_type)
-
-    list_path = [pre_screenshot_path, online_screenshot_path, diff_image_path]
-    for paths in list_path:
-        if not os.path.exists(paths):
-            os.makedirs(paths)
-
-    pre_path = os.path.join(screenshots_path, page_type, page_name + "_pre.png")
-    pro_path = os.path.join(screenshots_path, page_type, page_name + "_pro.png")
-    diff_image_path = os.path.join(screenshots_path, page_type, page_name + "_diff.png")
-
+def run_comparison(pro_url, pre_url, pre_list_screenshots_path, pre_detail_screenshots_path, pro_list_screenshots_path,
+                   pro_detail_screenshots_path, list_diff_image_path, detail_diff_image_path):
     # 创建两个线程，分别加载预发布和在线环境的截图
-    thread1 = threading.Thread(target=take_screenshot, args=(pre_url, pre_path))
-    thread2 = threading.Thread(target=take_screenshot, args=(pro_url, pro_path))
+    thread1 = threading.Thread(target=take_screenshot,
+                               args=(pre_url, pre_list_screenshots_path, pre_detail_screenshots_path))
+
+    thread2 = threading.Thread(target=take_screenshot,
+                               args=(pro_url, pro_list_screenshots_path, pro_detail_screenshots_path))
 
     # 启动线程
     thread1.start()
@@ -106,26 +100,27 @@ def run_comparison(page_name, pro_url, pre_url, page_type, screenshots_path):
     thread2.join()
 
     # 读取图像
-    pre_img = cv2.imread(pre_path)
-    pro_img = cv2.imread(pro_path)
+    pre_list_img = cv2.imread(pre_list_screenshots_path)
+    pre_detail_img = cv2.imread(pre_detail_screenshots_path)
+    pro_list_img = cv2.imread(pro_list_screenshots_path)
+    pro_detail_img = cv2.imread(pro_detail_screenshots_path)
 
     # 比较图像
-    is_similar = compare_images(pre_img, pro_img)
+    list_is_similar = compare_images(pre_list_img, pro_list_img)
+    detail_is_similar = compare_images(pre_detail_img, pro_detail_img)
 
-    if is_similar:
-        print("未发现视觉差异。")
+    if list_is_similar:
+        print("列表页截图对比未发现视觉差异。")
     else:
-        print(f"检测到页面差异,正在生成带标记的预览差异图像：PRE_URL=({pre_url}),PRO_URL=({pro_url})")
-        mark_differences(pre_img, pro_img, diff_image_path)
+        print(f"检测到列表页面差异,正在生成带标记的预览差异图像：PRE_URL=({pre_url}),PRO_URL=({pro_url})")
+        mark_differences(pre_list_img, pro_list_img, list_diff_image_path)
+    if detail_is_similar:
+        print("详情页截图对比未发现视觉差异。")
+    else:
+        print(f"检测到详情页面差异,正在生成带标记的预览差异图像：PRE_URL=({pre_url}),PRO_URL=({pro_url})")
+        mark_differences(pre_detail_img, pro_detail_img, detail_diff_image_path)
 
 
 # 示例用法
 if __name__ == "__main__":
-    item = {
-        'pre_url': 'https://www.example.com/pre',
-        'pro_url': 'https://www.example.com/pro',
-        'page_type': 'example_page',
-        'page_name': 'example_page_name'
-    }
-    screenshots_path = 'screenshot'
-    run_comparison(item, screenshots_path)
+    pass

@@ -1,4 +1,6 @@
 from common.handle_red_conf_file import cf
+from base_path import screenshots_path
+import os
 
 PRO_BASE_URL = cf.get_str('URL', 'PRO_BASE_URL')
 PRE_BASE_URL = cf.get_str('URL', 'PRE_BASE_URL')
@@ -69,60 +71,75 @@ RTS_PAGES = {
 }
 
 
-def handle_url(pro_url, pre_url, page_url, page_type):
+def handle_page_datas(pro_url, pre_url, page_items, cate_name):
     """
 
     :param pro_url:
     :param pre_url:
-    :param page_url:
-    :param page_type:
+    :param page_items:
+    :param cate_name:
     :return:
     """
+    list_page_datas = []
 
-    urls = []
-    for name, url in page_url.items():
-        urls.append({'page_name': name, 'pro_url': pro_url + url, 'pre_url': pre_url + url, "page_type": page_type})
-    return urls
+    for name, url in page_items.items():
+        pre_list_screenshots_path = os.path.join(screenshots_path, cate_name, name + "_list_pre.png")
+        pre_detail_screenshots_path = os.path.join(screenshots_path, cate_name, name + "_detail_pre.png")
+        pro_list_screenshots_path = os.path.join(screenshots_path, cate_name, name + "_list_pro.png")
+        pro_detail_screenshots_path = os.path.join(screenshots_path, cate_name, name + "_detail_pro.png")
+        list_diff_image_path = os.path.join(screenshots_path, cate_name, name + "_list_diff.png")
+        detail_diff_image_path = os.path.join(screenshots_path, cate_name, name + "_detail_diff.png")
+
+        list_page_datas.append({'pro_url': pro_url + url, 'pre_url': pre_url + url,
+                                "pre_list_screenshots_path": pre_list_screenshots_path,
+                                "pre_detail_screenshots_path": pre_detail_screenshots_path,
+                                "pro_list_screenshots_path": pro_list_screenshots_path,
+                                "pro_detail_screenshots_path": pro_detail_screenshots_path,
+                                "list_diff_image_path": list_diff_image_path,
+                                "detail_diff_image_path": detail_diff_image_path,
+
+                                })
+    return list_page_datas
 
 
 def get_bd_urls():
-    page_type = 'bd'
-    return handle_url(PRO_BASE_URL, PRE_BASE_URL, BD_PAGES, page_type)
+    cate_name = 'bd'
+    return handle_page_datas(PRO_BASE_URL, PRE_BASE_URL, BD_PAGES, cate_name)
 
 
 def get_mob_urls():
-    page_type = 'mob'
-    return handle_url(PRO_BASE_URL, PRE_BASE_URL, MOB_PAGES, page_type)
+    cate_name = 'mob'
+    return handle_page_datas(PRO_BASE_URL, PRE_BASE_URL, MOB_PAGES, cate_name)
 
 
 def get_jbd_urls():
-    page_type = 'jbd'
-    return handle_url(PRO_BASE_URL, PRE_BASE_URL, JBD_PAGES, page_type)
+    cate_name = 'jbd'
+    return handle_page_datas(PRO_BASE_URL, PRE_BASE_URL, JBD_PAGES, cate_name)
 
 
 def get_sod_urls():
-    page_type = 'sod'
-    return handle_url(PRO_BASE_URL, PRE_BASE_URL, SOD_PAGES, page_type)
+    cate_name = 'sod'
+    return handle_page_datas(PRO_BASE_URL, PRE_BASE_URL, SOD_PAGES, cate_name)
 
 
 def get_acc_urls():
-    page_type = 'acc'
-    return handle_url(PRO_BASE_URL, PRE_BASE_URL, ACC_PAGES, page_type)
+    cate_name = 'acc'
+    return handle_page_datas(PRO_BASE_URL, PRE_BASE_URL, ACC_PAGES, cate_name)
 
 
 def get_sample_urls():
-    page_type = 'sample'
-    return handle_url(PRO_BASE_URL, PRE_BASE_URL, SAMPLE_PAGES, page_type)
+    cate_name = 'sample'
+    return handle_page_datas(PRO_BASE_URL, PRE_BASE_URL, SAMPLE_PAGES, cate_name)
 
 
 def get_swatch_urls():
-    page_type = 'swatch'
-    return handle_url(PRO_BASE_URL, PRE_BASE_URL, SWATCH_PAGES, page_type)
+    cate_name = 'swatch'
+    return handle_page_datas(PRO_BASE_URL, PRE_BASE_URL, SWATCH_PAGES, cate_name)
 
 
 def get_rts_urls():
-    page_type = 'rts'
-    return handle_url(PRO_BASE_URL, PRE_BASE_URL, RTS_PAGES, page_type)
+    cate_name = 'rts'
+    return handle_page_datas(PRO_BASE_URL, PRE_BASE_URL, RTS_PAGES, cate_name)
 
 
 if __name__ == '__main__':

@@ -1,0 +1,10 @@
+2024-04-02 21:22:07,888:mylog:click_element:basepage.py:64:INFO:在 随机 点击BD列表页商品 行为,点击元素：('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]')
+2024-04-02 21:22:07,889:mylog:__waite_ele_visible:basepage.py:25:INFO:在 随机 点击BD列表页商品 行为,等待元素：('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]') 可见
+2024-04-02 21:22:07,919:mylog:__waite_ele_visible:basepage.py:37:INFO:等待元素(('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]'))成功，等待时间为:-0.03000783920288086
+2024-04-02 21:22:07,920:mylog:get_element:basepage.py:42:INFO:在  随机 点击BD列表页商品  行为,查找元素：('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]')
+2024-04-02 21:22:07,934:mylog:get_element:basepage.py:47:INFO:查找:('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]') 元素失败
+2024-04-02 21:22:12,782:mylog:click_element:basepage.py:64:INFO:在 随机 点击BD列表页商品 行为,点击元素：('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]')
+2024-04-02 21:22:12,783:mylog:__waite_ele_visible:basepage.py:25:INFO:在 随机 点击BD列表页商品 行为,等待元素：('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]') 可见
+2024-04-02 21:22:12,812:mylog:__waite_ele_visible:basepage.py:37:INFO:等待元素(('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]'))成功，等待时间为:-0.02900552749633789
+2024-04-02 21:22:12,813:mylog:get_element:basepage.py:42:INFO:在  随机 点击BD列表页商品  行为,查找元素：('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]')
+2024-04-02 21:22:12,827:mylog:get_element:basepage.py:47:INFO:查找:('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]') 元素失败
