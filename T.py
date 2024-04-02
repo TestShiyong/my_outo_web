@@ -1,25 +1,55 @@
-import threading
+import time
+import logging
 
-# 创建一个互斥锁
-lock = threading.Lock()
+import base_path
+from pages import all_page_url
+from common.handle_images import run_comparison
 
-def func():
-    # 获取锁
-    lock.acquire()
+screenshots_dir = base_path.page_screenshots_dir
+
+# 设置日志配置
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+
+def run_comparison_for_page(page_data):
     try:
-        # 访问共享资源
-        print("Accessing shared resource")
-    finally:
-        # 释放锁
-        lock.release()
+        run_comparison(page_data, screenshots_dir)
+    except Exception as e:
+        logger.error(f"对比页面 {page_data['page_type']} 时出现错误: {str(e)}")
 
-# 创建多个线程并启动
-threads = []
-for _ in range(5):
-    t = threading.Thread(target=func)
-    # threads.append(t)
-    t.start()
 
-# 等待所有线程执行完成
-for t in threads:
-    t.join()
+def test_compare_pages(compare_function, page_name):
+    logger.info(f"开始对比 {page_name} 页面...")
+    page_data = compare_function()
+    for item in page_data:
+        run_comparison_for_page(item)
+    logger.info(f"{page_name} 页面对比完成。")
+
+
+def test_compare_bd_list():
+    test_compare_pages(all_page_url.get_bd_urls, "BD")
+
+
+def test_compare_jbd_list():
+    test_compare_pages(all_page_url.get_jbd_urls, "JBD")
+
+
+def test_compare_sod_list():
+    test_compare_pages(all_page_url.get_sod_urls, "SOD")
+
+
+def test_compare_acc_list():
+    test_compare_pages(all_page_url.get_acc_urls, "ACC")
+
+
+def test_compare_sample_list():
+    test_compare_pages(all_page_url.get_sample_urls, "SAMPLE")
+
+
+def test_compare_swatch_list():
+    test_compare_pages(all_page_url.get_swatch_urls, "SWATCH")
+
+
+def test_compare_rts_list():
+    test_compare_pages(all_page_url.get_rts_urls, "RTS")

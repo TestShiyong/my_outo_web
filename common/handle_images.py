@@ -78,7 +78,7 @@ def mark_differences(pre_img, online_img, diff_image_path, threshold=30):
 
     combined_img.save(diff_image_path)
 
-
+def run_comparison(page_name,pre_url,pro_url,page_type,screenshots_path):
 def run_comparison(item, page_img_dir):
     pre_url = item['pre_url']
     pro_url = item['pro_url']

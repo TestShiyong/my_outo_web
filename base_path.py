@@ -18,7 +18,7 @@ base = os.path.dirname(os.path.abspath(__file__))
 
 config_file_dir = os.path.join(base, 'pytest.ini')
 
-page_screenshots_dir = os.path.join(base_dir, 'output', 'screenshot')
+screenshots_path = os.path.join(base_dir, 'output', 'screenshot')
 
 
 if __name__ == '__main__':

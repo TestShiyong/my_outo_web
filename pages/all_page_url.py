@@ -80,8 +80,8 @@ def handle_url(pro_url, pre_url, page_url, page_type):
     """
 
     urls = []
-    for k, V in page_url.items():
-        urls.append({'page_name': k, 'pro_url': pro_url + V, 'pre_url': pre_url + V, "page_type": page_type})
+    for name, url in page_url.items():
+        urls.append({'page_name': name, 'pro_url': pro_url + url, 'pre_url': pre_url + url, "page_type": page_type})
     return urls
 
 
