@@ -2,7 +2,7 @@ import time
 
 import base_path
 from pages import all_page_url
-from common.handle_images import main
+from common.handle_images import run_comparison
 
 screenshots_dir = base_path.page_screenshots_dir
 
@@ -36,7 +36,7 @@ screenshots_dir = base_path.page_screenshots_dir
 def test_compare_sample_list():
     page_date = all_page_url.get_sample_urls()
     for item in page_date:
-        main(item, screenshots_dir)
+        run_comparison(item, screenshots_dir)
 
 
 # def test_compare_swatch_list():

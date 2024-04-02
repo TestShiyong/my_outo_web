@@ -16,13 +16,6 @@ import random
 
 
 class BasePage:
-    '''
-    def waite_ele_visible：封装的等待元素可见方法 #打印-计时-try-等待-expect-打印-截图-r-else打印等待时长
-
-    def get_element(self,loc,page_action): 封装的 find 元素方法 ，打印-调用封装好的等待-try-查找元素-expect  打印失败-截图-raise-else-return 元素
-
-
-    '''
 
     def __init__(self, drever: WebDriver):
         self.driver = drever
@@ -118,14 +111,11 @@ class BasePage:
         # 调用截图方法 传入文件路径
         self.driver.save_screenshot(file_path)
 
-    def swich_to_window(self, old=False):
+    def switch_to_window(self, old=False):
 
         time.sleep(2)
-
-        log.info('获取当前 浏览器所有窗口句柄')
         win_s = self.driver.window_handles
         try:
-            log.info('准备切换到最新窗口')
             if old:
                 self.driver.switch_to.window(win_s[0])
             else:
@@ -150,10 +140,4 @@ class BasePage:
 
 
 if __name__ == '__main__':
-    driver = webdriver.Chrome()
-    new_basepage = Base_page(driver)
-    driver.maximize_window()
-    driver.get('https://www.baidu.com/')
-
-    loc = (By.ID, 'kw')
-    new_basepage.input_value(loc, '百度输入框输入文本', '柠檬班')
+    pass

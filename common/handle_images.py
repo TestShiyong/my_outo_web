@@ -9,14 +9,13 @@ import os
 from common.basepage import BasePage
 
 
-def take_screenshot(url, list_imge_path, lock):
+def take_screenshot(url, list_screenshot_path, detail_screenshot_path):
     """
     :param url:
-    :param file_path:
-    :param lock:
+    :param list_screenshot_path:
+    :param detail_screenshot_path:
     :return:
     """
-
     # 设置Chrome选项，运行在无界面模式（无GUI）
     options = webdriver.ChromeOptions()
     # options.add_argument('--headless')
@@ -29,10 +28,9 @@ def take_screenshot(url, list_imge_path, lock):
         driver.get(url)
         base_page.remover_activity_bar()
 
-        with lock:
-            base_page.driver.save_screenshot(file_path)
-            base_page.click_random_commodity()
-            base_page.driver.save_screenshot(list_imge_path)
+        base_page.driver.save_screenshot(list_screenshot_path)
+        base_page.click_random_commodity()
+        base_page.driver.save_screenshot(detail_screenshot_path)
 
     finally:
         driver.quit()
@@ -81,7 +79,7 @@ def mark_differences(pre_img, online_img, diff_image_path, threshold=30):
     combined_img.save(diff_image_path)
 
 
-def main(item, page_img_dir):
+def run_comparison(item, page_img_dir):
     pre_url = item['pre_url']
     pro_url = item['pro_url']
 
@@ -98,12 +96,9 @@ def main(item, page_img_dir):
     pro_path = os.path.join(page_img_dir, item['page_type'], item['page_name'] + "_pro.png")
     diff_image_path = os.path.join(page_img_dir, item['page_type'], item['page_name'] + "_diff.png")
 
-    # 创建锁对象
-    lock = threading.Lock()
-
     # 创建两个线程，分别加载预发布和在线环境的截图
-    thread1 = threading.Thread(target=take_screenshot, args=(pre_url, pre_path, lock))
-    thread2 = threading.Thread(target=take_screenshot, args=(pro_url, pro_path, lock))
+    thread1 = threading.Thread(target=take_screenshot, args=(pre_url, pre_path))
+    thread2 = threading.Thread(target=take_screenshot, args=(pro_url, pro_path))
 
     # 启动线程
     thread1.start()
@@ -127,7 +122,13 @@ def main(item, page_img_dir):
         mark_differences(pre_img, pro_img, diff_image_path)
 
 
+# 示例用法
 if __name__ == "__main__":
-    lock = threading.Lock()
-    take_screenshot('https://www.azazie.com/all/sample-brides?sort_by=popularity&current_in_stock=yes', './ccc.png',
-                    lock)
+    item = {
+        'pre_url': 'https://www.example.com/pre',
+        'pro_url': 'https://www.example.com/pro',
+        'page_type': 'example_page',
+        'page_name': 'example_page_name'
+    }
+    page_img_dir = 'screenshot'
+    main(item, page_img_dir)
