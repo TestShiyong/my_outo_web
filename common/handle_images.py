@@ -78,23 +78,20 @@ def mark_differences(pre_img, online_img, diff_image_path, threshold=30):
 
     combined_img.save(diff_image_path)
 
-def run_comparison(page_name,pre_url,pro_url,page_type,screenshots_path):
-def run_comparison(item, page_img_dir):
-    pre_url = item['pre_url']
-    pro_url = item['pro_url']
 
-    pre_screenshot_path = os.path.join(page_img_dir, item['page_type'])
-    online_screenshot_path = os.path.join(page_img_dir, item['page_type'])
-    diff_image_path = os.path.join(page_img_dir, item['page_type'])
+def run_comparison(page_name, pro_url, pre_url, page_type, screenshots_path):
+    pre_screenshot_path = os.path.join(screenshots_path, page_type)
+    online_screenshot_path = os.path.join(screenshots_path, page_type)
+    diff_image_path = os.path.join(screenshots_path, page_type)
 
     list_path = [pre_screenshot_path, online_screenshot_path, diff_image_path]
     for paths in list_path:
         if not os.path.exists(paths):
             os.makedirs(paths)
 
-    pre_path = os.path.join(page_img_dir, item['page_type'], item['page_name'] + "_pre.png")
-    pro_path = os.path.join(page_img_dir, item['page_type'], item['page_name'] + "_pro.png")
-    diff_image_path = os.path.join(page_img_dir, item['page_type'], item['page_name'] + "_diff.png")
+    pre_path = os.path.join(screenshots_path, page_type, page_name + "_pre.png")
+    pro_path = os.path.join(screenshots_path, page_type, page_name + "_pro.png")
+    diff_image_path = os.path.join(screenshots_path, page_type, page_name + "_diff.png")
 
     # 创建两个线程，分别加载预发布和在线环境的截图
     thread1 = threading.Thread(target=take_screenshot, args=(pre_url, pre_path))
@@ -130,5 +127,5 @@ if __name__ == "__main__":
         'page_type': 'example_page',
         'page_name': 'example_page_name'
     }
-    page_img_dir = 'screenshot'
-    run_comparison(item, page_img_dir)
+    screenshots_path = 'screenshot'
+    run_comparison(item, screenshots_path)
