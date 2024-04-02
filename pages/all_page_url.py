@@ -4,9 +4,7 @@ PRO_BASE_URL = cf.get_str('URL', 'PRO_BASE_URL')
 PRE_BASE_URL = cf.get_str('URL', 'PRE_BASE_URL')
 
 custom_p_number = 1
-custom_p_url = f'https://p{custom_p_number}.azazie.com'
-home_page = 'https://www.azazie.com/'
-list_page__url = ''
+custom_pre_url = f'https://p{custom_p_number}.azazie.com'
 BD_PAGES = {'list_page_bd_url': '/all/bridesmaid-dresses',
             'list_page_bd_plus_size_url': '/all/plus-size-bridesmaid-dresses',
             'list_page_maternity_url': '/all/maternity-bridesmaid-dresses',
@@ -16,15 +14,12 @@ BD_PAGES = {'list_page_bd_url': '/all/bridesmaid-dresses',
 MOB_PAGES = {'list_page_mother_url': '/all/mother-of-the-bride-dresses',
              'list_page_plus_sie_mob_url': '/all/plus-size-mother-of-the-bride-dresses'}
 
-# JBD
 JBD_PAGES = {'list_page_all_jbd_url': '/all/all-junior',
              'list_page_junior_url': '/all/junior-bridesmaid-dresses',
              'list_page_flower_url': '/all/flower-girl-dresses'}
 
-# SOD
 SOD_PAGES = {'list_page_sod_url': '/all/atelier-dresses'}
 
-# ACC
 ACC_PAGES = {'list_page_all_acc_url': '/all/accessories',
              'list_page_groomsmen_rul': '/all/groomsmen-accessories',
              'list_page_shoes_url': '/all/shoes',
@@ -39,22 +34,19 @@ ACC_PAGES = {'list_page_all_acc_url': '/all/accessories',
              'list_page_separates': '/all/separates',
              'list_page_garment_bags': '/all/garment-bags'}
 
-# SAMPLE
 SAMPLE_PAGES = {
     # 'list_page_all_sample_url': '/all/sample-dresses?current_in_stock=yes',
-                'list_page_wd_sample_url': '/all/sample-brides?current_in_stock=yes',
-                'list_page_bd_sample_url': '/all/sample-bridesmaids?sort_by=popularity&current_in_stock=yes',
-                'list_page_maternity_sample_url': 'sort_by=popularity&current_in_stock=yes',
-                'list_page_modest_sample_url': '/all/sample-modest?sort_by=popularity&current_in_stock=yes',
-                'list_page_mother_sample_url': '/all/sample-mother-of-the-bride?sort_by=popularity&current_in_stock=yes',
-                'list_page_junior_sample_url': '/all/sample-junior-bridesmaid-dresses?sort_by=popularity&current_in_stock=yes'}
+    'list_page_wd_sample_url': '/all/sample-brides?current_in_stock=yes',
+    'list_page_bd_sample_url': '/all/sample-bridesmaids?sort_by=popularity&current_in_stock=yes',
+    'list_page_maternity_sample_url': 'sort_by=popularity&current_in_stock=yes',
+    'list_page_modest_sample_url': '/all/sample-modest?sort_by=popularity&current_in_stock=yes',
+    'list_page_mother_sample_url': '/all/sample-mother-of-the-bride?sort_by=popularity&current_in_stock=yes',
+    'list_page_junior_sample_url': '/all/sample-junior-bridesmaid-dresses?sort_by=popularity&current_in_stock=yes'}
 
-# SWATCH
 SWATCH_PAGES = {'list_page_swatch_fabric_url': '/swatches-fabric',
                 'list_page_swatches_url': '/all/swatches',
                 'list_page_fabrics_url': '/all/fabrics'}
 
-# RTS
 RTS_PAGES = {
     "list_page_all_rts_url": "/all/final-sale",
     "list_page_bd_rts_url": "/all/final-sale/with/category/ready-to-ship-bridesmaids?sort_by=popularity&current_in_stock=yes",
@@ -78,14 +70,15 @@ RTS_PAGES = {
 
 
 def handle_url(pro_url, pre_url, page_url, page_type):
-    '''
-    处理成品对比url数据
-    :param page_type:
+    """
+
     :param pro_url:
     :param pre_url:
     :param page_url:
+    :param page_type:
     :return:
-    '''
+    """
+
     urls = []
     for k, V in page_url.items():
         urls.append({'page_name': k, 'pro_url': pro_url + V, 'pre_url': pre_url + V, "page_type": page_type})

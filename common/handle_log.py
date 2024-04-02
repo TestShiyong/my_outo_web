@@ -18,9 +18,9 @@ class Mylog(logging.Logger):
         # 定义日志输出格式
         fmt = '%(asctime)s:%(name)s:%(funcName)s:%(filename)s:%(lineno)d:%(levelname)s:%(message)s'
         # 创建日志格式
-        format = logging.Formatter(fmt)
+        formats = logging.Formatter(fmt)
         # 渠道绑定日志格式
-        console_handle.setFormatter(format)
+        console_handle.setFormatter(formats)
         # 收集器添加渠道
         self.addHandler(console_handle)
         # 判断是否写入文件
@@ -28,7 +28,7 @@ class Mylog(logging.Logger):
             # 创建文件收集渠道
             file_handle = logging.FileHandler(file, mode='w', encoding='utf-8')
             # 日志格式绑定渠道
-            file_handle.setFormatter(format)
+            file_handle.setFormatter(formats)
             # 添加至收集器
             self.addHandler(file_handle)
 

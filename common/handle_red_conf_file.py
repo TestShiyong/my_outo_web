@@ -9,8 +9,8 @@
 
 from configparser import ConfigParser
 
-
 import base_path
+
 
 class ReadConfigFile:
     def __init__(self, file_path):

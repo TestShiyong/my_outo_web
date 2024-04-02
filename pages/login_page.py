@@ -2,10 +2,11 @@
 #:@FILE  login_page.py
 #:@EMAIL  1557225637@QQ.COM
 from selenium.webdriver.common.by import By
-from common.basepage import Base_page
+from common.basepage import BasePage
+
 
 # login页对象类
-class LoginPage(Base_page):
+class LoginPage(BasePage):
     # 用户名输入框
     input_email_elm = By.ID, '_email'
     # 密码输入框
@@ -21,7 +22,6 @@ class LoginPage(Base_page):
     invalid_email = By.XPATH, '//span[@class="waiting"]/following-sibling::span'
     # The email address or password you entered is incorrect.
     password_error = By.XPATH, '//span[@class="help-block"]'
-
 
     # 登录成功功能
     def login(self, email, password):

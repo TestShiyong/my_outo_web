@@ -131,4 +131,4 @@ if __name__ == "__main__":
         'page_name': 'example_page_name'
     }
     page_img_dir = 'screenshot'
-    main(item, page_img_dir)
+    run_comparison(item, page_img_dir)
