@@ -133,10 +133,36 @@ class BasePage:
         except NoSuchElementException:
             print("未找到指定元素 activity_bar")
 
-    def click_random_commodity(self):
+    def scroll_to_bottom(self):
+        """
+        将浏览器滚动到页面底部
+        :param driver: WebDriver对象
+        """
+        self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+
+    def click_random_commodity(self, random_number=None):
         all_commoditys = By.XPATH, '//a[@data-datalayer-category="PlusSizeGowns"]'
-        rd = random.randint(0, 60)
-        self.click_element(all_commoditys, '随机 点击BD列表页商品', rd)
+        if random_number:
+            rd = random_number
+            self.scroll_to_bottom()
+            self.click_element(all_commoditys, '随机 点击BD列表页商品', rd)
+        else:
+            rd = random.randint(0, 60)
+            self.scroll_to_bottom()
+            self.click_element(all_commoditys, '随机 点击BD列表页商品', rd)
+
+    def scroll_to_element(self, element):
+        """
+        将浏览器滚动到特定元素位置
+        :param driver: WebDriver对象
+        :param element: 要滚动到的元素
+        """
+        self.driver.execute_script("arguments[0].scrollIntoView();", element)
+
+    def close_new_user_pop(self):
+        loc = By.XPATH, '//button[@aria-label="Close button"]'
+
+        self.click_element(loc, '关闭新客弹窗')
 
 
 if __name__ == '__main__':

@@ -1,21 +1,22 @@
 import time
 import threading
 from selenium import webdriver
-from selenium.webdriver.common.by import By
 from PIL import Image
 import cv2
-import base_path
-import os
 from common.basepage import BasePage
+import random
 
 
-def take_screenshot(url, list_screenshot_path, detail_screenshot_path):
+def take_screenshot(url, list_screenshot_path, detail_screenshot_path, random_number):
     """
+
     :param url:
     :param list_screenshot_path:
     :param detail_screenshot_path:
+    :param random_number:
     :return:
     """
+
     # 设置Chrome选项，运行在无界面模式（无GUI）
     options = webdriver.ChromeOptions()
     # options.add_argument('--headless')
@@ -29,8 +30,10 @@ def take_screenshot(url, list_screenshot_path, detail_screenshot_path):
         base_page.remover_activity_bar()
         # 截图列表页
         base_page.driver.save_screenshot(list_screenshot_path)
-        base_page.click_random_commodity()
+        base_page.click_random_commodity(random_number)
         # 截图详情页
+        base_page.switch_to_window()
+        base_page.close_new_user_pop()
         base_page.driver.save_screenshot(detail_screenshot_path)
     except Exception:
         print('webdriver异常 。。。。。。。。。。。。。。。。。。。。。。。。。。。')
@@ -84,12 +87,13 @@ def mark_differences(pre_img, online_img, diff_image_path, threshold=30):
 
 def run_comparison(pro_url, pre_url, pre_list_screenshots_path, pre_detail_screenshots_path, pro_list_screenshots_path,
                    pro_detail_screenshots_path, list_diff_image_path, detail_diff_image_path):
+    random_number = random.randint(1, 60)
     # 创建两个线程，分别加载预发布和在线环境的截图
     thread1 = threading.Thread(target=take_screenshot,
-                               args=(pre_url, pre_list_screenshots_path, pre_detail_screenshots_path))
+                               args=(pre_url, pre_list_screenshots_path, pre_detail_screenshots_path, random_number))
 
     thread2 = threading.Thread(target=take_screenshot,
-                               args=(pro_url, pro_list_screenshots_path, pro_detail_screenshots_path))
+                               args=(pro_url, pro_list_screenshots_path, pro_detail_screenshots_path, random_number))
 
     # 启动线程
     thread1.start()

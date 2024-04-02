@@ -1,10 +1,20 @@
-2024-04-02 21:22:07,888:mylog:click_element:basepage.py:64:INFO:在 随机 点击BD列表页商品 行为,点击元素：('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]')
-2024-04-02 21:22:07,889:mylog:__waite_ele_visible:basepage.py:25:INFO:在 随机 点击BD列表页商品 行为,等待元素：('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]') 可见
-2024-04-02 21:22:07,919:mylog:__waite_ele_visible:basepage.py:37:INFO:等待元素(('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]'))成功，等待时间为:-0.03000783920288086
-2024-04-02 21:22:07,920:mylog:get_element:basepage.py:42:INFO:在  随机 点击BD列表页商品  行为,查找元素：('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]')
-2024-04-02 21:22:07,934:mylog:get_element:basepage.py:47:INFO:查找:('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]') 元素失败
-2024-04-02 21:22:12,782:mylog:click_element:basepage.py:64:INFO:在 随机 点击BD列表页商品 行为,点击元素：('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]')
-2024-04-02 21:22:12,783:mylog:__waite_ele_visible:basepage.py:25:INFO:在 随机 点击BD列表页商品 行为,等待元素：('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]') 可见
-2024-04-02 21:22:12,812:mylog:__waite_ele_visible:basepage.py:37:INFO:等待元素(('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]'))成功，等待时间为:-0.02900552749633789
-2024-04-02 21:22:12,813:mylog:get_element:basepage.py:42:INFO:在  随机 点击BD列表页商品  行为,查找元素：('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]')
-2024-04-02 21:22:12,827:mylog:get_element:basepage.py:47:INFO:查找:('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]') 元素失败
+2024-04-02 23:04:55,096:mylog:click_element:basepage.py:64:INFO:在 随机 点击BD列表页商品 行为,点击元素：('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]')
+2024-04-02 23:04:55,097:mylog:__waite_ele_visible:basepage.py:25:INFO:在 随机 点击BD列表页商品 行为,等待元素：('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]') 可见
+2024-04-02 23:04:56,556:mylog:click_element:basepage.py:64:INFO:在 随机 点击BD列表页商品 行为,点击元素：('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]')
+2024-04-02 23:04:56,556:mylog:__waite_ele_visible:basepage.py:25:INFO:在 随机 点击BD列表页商品 行为,等待元素：('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]') 可见
+2024-04-02 23:05:15,277:mylog:__waite_ele_visible:basepage.py:32:ERROR:等待(('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]'))元素可见失败
+Traceback (most recent call last):
+  File "D:\Shi\all_file\test\my_outo_web\common\basepage.py", line 30, in __waite_ele_visible
+    WebDriverWait(self.driver, time_out).until(EC.visibility_of_element_located(loc))
+  File "C:\Users\Shi\.virtualenvs\nm_web-LeY76k4f\lib\site-packages\selenium\webdriver\support\wait.py", line 105, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+
+2024-04-02 23:05:16,851:mylog:__waite_ele_visible:basepage.py:32:ERROR:等待(('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]'))元素可见失败
+Traceback (most recent call last):
+  File "D:\Shi\all_file\test\my_outo_web\common\basepage.py", line 30, in __waite_ele_visible
+    WebDriverWait(self.driver, time_out).until(EC.visibility_of_element_located(loc))
+  File "C:\Users\Shi\.virtualenvs\nm_web-LeY76k4f\lib\site-packages\selenium\webdriver\support\wait.py", line 105, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+

@@ -1,55 +1,22 @@
-import time
-import logging
+from selenium import webdriver
+from common.basepage import BasePage
+def scroll_to_element(driver, element):
+    """
+    将浏览器滚动到特定元素位置
+    :param driver: WebDriver对象
+    :param element: 要滚动到的元素
+    """
+    driver.execute_script("arguments[0].scrollIntoView();", element)
 
-import base_path
-from pages import all_page_url
-from common.handle_images import run_comparison
+# 示例用法
+if __name__ == "__main__":
+    # 启动浏览器
+    driver = webdriver.Chrome()
 
-screenshots_dir = base_path.page_screenshots_dir
+    # 打开网页
+    driver.get("https://www.azazie.com")
+    base_page = BasePage(driver)
+    # 找到特定的元素
+    base_page.scroll_to_bottom()
+    base_page.close_new_user_pop()
 
-# 设置日志配置
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
-
-
-def run_comparison_for_page(page_data):
-    try:
-        run_comparison(page_data, screenshots_dir)
-    except Exception as e:
-        logger.error(f"对比页面 {page_data['page_type']} 时出现错误: {str(e)}")
-
-
-def test_compare_pages(compare_function, page_name):
-    logger.info(f"开始对比 {page_name} 页面...")
-    page_data = compare_function()
-    for item in page_data:
-        run_comparison_for_page(item)
-    logger.info(f"{page_name} 页面对比完成。")
-
-
-def test_compare_bd_list():
-    test_compare_pages(all_page_url.get_bd_urls, "BD")
-
-
-def test_compare_jbd_list():
-    test_compare_pages(all_page_url.get_jbd_urls, "JBD")
-
-
-def test_compare_sod_list():
-    test_compare_pages(all_page_url.get_sod_urls, "SOD")
-
-
-def test_compare_acc_list():
-    test_compare_pages(all_page_url.get_acc_urls, "ACC")
-
-
-def test_compare_sample_list():
-    test_compare_pages(all_page_url.get_sample_urls, "SAMPLE")
-
-
-def test_compare_swatch_list():
-    test_compare_pages(all_page_url.get_swatch_urls, "SWATCH")
-
-
-def test_compare_rts_list():
-    test_compare_pages(all_page_url.get_rts_urls, "RTS")
