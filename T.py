@@ -1,22 +1,27 @@
-from selenium import webdriver
-from common.basepage import BasePage
-def scroll_to_element(driver, element):
-    """
-    将浏览器滚动到特定元素位置
-    :param driver: WebDriver对象
-    :param element: 要滚动到的元素
-    """
-    driver.execute_script("arguments[0].scrollIntoView();", element)
+def singleton_instance(cls):
+    instances = {}
 
-# 示例用法
-if __name__ == "__main__":
-    # 启动浏览器
-    driver = webdriver.Chrome()
+    def fun(*ars, **kwargs):
+        if cls in instances:
+            return instances[cls]
+        else:
+            instances[cls] = cls(*ars, **kwargs)
+            return instances[cls]
 
-    # 打开网页
-    driver.get("https://www.azazie.com")
-    base_page = BasePage(driver)
-    # 找到特定的元素
-    base_page.scroll_to_bottom()
-    base_page.close_new_user_pop()
+    return fun
 
+
+@singleton_instance
+class SingletonObject:
+    def __init__(self, name):
+        self.name = name
+
+    def test_func(self):
+        print('11111111111')
+
+
+singleton_instance1 = SingletonObject('shiyong')
+singleton_instance2 = SingletonObject('shiyong1')
+
+print(id(singleton_instance1))
+print(id(singleton_instance2))
