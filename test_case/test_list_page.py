@@ -8,7 +8,6 @@ from common.handle_images import run_comparison
 
 
 class TestPageComparison:
-    screenshots_path = base_path.screenshots_path
 
     @pytest.mark.parametrize('page_data', al_page.get_bd_urls())
     def test_compare_bd_list(self, page_data):
