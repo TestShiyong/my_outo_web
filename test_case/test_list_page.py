@@ -7,7 +7,7 @@ from pages import all_page_url as al_page
 from common.handle_images import run_comparison
 
 
-class TestPageComparison(BasePage):
+class TestPageComparison:
     screenshots_path = base_path.screenshots_path
 
     @pytest.mark.parametrize('page_data', al_page.get_bd_urls())
