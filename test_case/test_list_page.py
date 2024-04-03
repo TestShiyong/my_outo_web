@@ -16,6 +16,7 @@ def test_compare_bd_list():
                        page_date['pro_detail_screenshots_path'], page_date['list_diff_image_path'],
                        page_date['detail_diff_image_path']
                        )
+    input('ccccccc')
 
 #
 # def test_compare_jbd_list():

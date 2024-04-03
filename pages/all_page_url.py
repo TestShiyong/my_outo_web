@@ -143,5 +143,7 @@ def get_rts_urls():
 
 
 if __name__ == '__main__':
-    print(get_bd_urls())
-    pass
+    li = get_bd_urls()
+    for i in li:
+        print(i)
+

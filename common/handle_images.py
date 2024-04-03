@@ -33,7 +33,6 @@ def take_screenshot(url, list_screenshot_path, detail_screenshot_path, random_nu
         base_page.click_random_commodity(random_number)
         # 截图详情页
         base_page.switch_to_window()
-        base_page.close_new_user_pop()
         base_page.driver.save_screenshot(detail_screenshot_path)
     except Exception:
         print('webdriver异常 。。。。。。。。。。。。。。。。。。。。。。。。。。。')

@@ -145,6 +145,7 @@ class BasePage:
         if random_number:
             rd = random_number
             self.scroll_to_bottom()
+            self.close_new_user_pop()
             self.click_element(all_commoditys, '随机 点击BD列表页商品', rd)
         else:
             rd = random.randint(0, 60)
@@ -159,8 +160,8 @@ class BasePage:
         """
         self.driver.execute_script("arguments[0].scrollIntoView();", element)
 
-    def close_new_user_pop(self):
-        loc = By.XPATH, '//button[@aria-label="Close button"]'
+    def close_new_user_pop(self, loc=None):
+        loc = loc if loc else By.XPATH, '//button[@aria-label="Close button"]'
 
         self.click_element(loc, '关闭新客弹窗')
 

@@ -19,6 +19,7 @@ install = "*"
 pytest-xdist = "*"
 allure-pytest = "*"
 opencv-python = "*"
+ddt = "*"
 
 [dev-packages]
 
