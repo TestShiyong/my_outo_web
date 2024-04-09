@@ -1,7 +1,7 @@
 import pytest
 from common.webpage_screenshot_comparison import take_screenshot
-pytest.main(['-s', '-v', '--alluredir=./allure_report'])
-
+# pytest.main(['-s', '-v', '--alluredir=./allure_report'])
+#
 # pytest.main(['-s', '-v', '-n', '2','--alluredir=./allure_report'])
 # pytest.main(['-s', '-v', ])
 

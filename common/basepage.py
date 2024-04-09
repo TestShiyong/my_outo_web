@@ -147,6 +147,7 @@ class BasePage:
         commodity_locator = By.XPATH, '//a[@data-datalayer-category="PlusSizeGowns"]'
         self.scroll_to_bottom()
         self.close_new_user_popup()
+        time.sleep(2)
         self.click_element(commodity_locator, '随机点击BD列表页商品', random_index)
 
     def scroll_to_element(self, element):

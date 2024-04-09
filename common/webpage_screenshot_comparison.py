@@ -12,7 +12,7 @@ def create_driver(is_headers=True):
     if not is_headers:
         options.add_argument('--headless')
     driver = webdriver.Chrome(options=options)
-    driver.set_window_size(1920, 1080)  # 设置窗口大小为1920x1080像素
+    driver.maximize_window()
     return driver
 
 
@@ -33,6 +33,7 @@ def take_screenshot(url, list_screenshot_path, base_path, detail_screenshot_path
     base_page.click_random_commodity(random_number)
     base_page.switch_to_window()
     base_page.remover_activity_bar()
+    base_page.driver.execute_script("document.body.style.zoom='67%'")  # 80% 的缩放比例
     base_page.save_screenshot(base_path, detail_screenshot_path)
 
 
