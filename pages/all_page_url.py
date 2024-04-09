@@ -83,6 +83,7 @@ def handle_page_datas(pro_url, pre_url, page_items, cate_name):
     list_page_datas = []
 
     for name, url in page_items.items():
+        base_path = os.path.join(screenshots_path, cate_name)
         pre_list_screenshots_path = os.path.join(screenshots_path, cate_name, name + "_list_pre.png")
         pre_detail_screenshots_path = os.path.join(screenshots_path, cate_name, name + "_detail_pre.png")
         pro_list_screenshots_path = os.path.join(screenshots_path, cate_name, name + "_list_pro.png")
@@ -90,7 +91,7 @@ def handle_page_datas(pro_url, pre_url, page_items, cate_name):
         list_diff_image_path = os.path.join(screenshots_path, cate_name, name + "_list_diff.png")
         detail_diff_image_path = os.path.join(screenshots_path, cate_name, name + "_detail_diff.png")
 
-        list_page_datas.append({'pro_url': pro_url + url, 'pre_url': pre_url + url,
+        list_page_datas.append({'pro_url': pro_url + url, 'pre_url': pre_url + url, 'base_path': base_path,
                                 "pre_list_screenshots_path": pre_list_screenshots_path,
                                 "pre_detail_screenshots_path": pre_detail_screenshots_path,
                                 "pro_list_screenshots_path": pro_list_screenshots_path,
@@ -146,4 +147,3 @@ if __name__ == '__main__':
     li = get_bd_urls()
     for i in li:
         print(i)
-

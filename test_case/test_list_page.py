@@ -1,35 +1,27 @@
-import time
-
 import pytest
-import base_path
-from common.basepage import BasePage
+
+from common.webpage_screenshot_comparison import run_comparison
 from pages import all_page_url as al_page
-from common.handle_images import run_comparison
 
 
 class TestPageComparison:
 
     @pytest.mark.parametrize('page_data', al_page.get_bd_urls())
     def test_compare_bd_list(self, page_data):
-        try:
-            run_comparison(page_data['pro_url'], page_data['pre_url'], page_data['pre_list_screenshots_path'],
-                           page_data['pre_detail_screenshots_path'], page_data['pro_list_screenshots_path'],
-                           page_data['pro_detail_screenshots_path'], page_data['list_diff_image_path'],
-                           page_data['detail_diff_image_path']
-                           )
-        except Exception as e:
-            print("Exception occurred:", e)
+        run_comparison(page_data['pro_url'], page_data['pre_url'],page_data['base_path'], page_data['pre_list_screenshots_path'],
+                       page_data['pre_detail_screenshots_path'], page_data['pro_list_screenshots_path'],
+                       page_data['pro_detail_screenshots_path'], page_data['list_diff_image_path'],
+                       page_data['detail_diff_image_path']
+                       )
 
     # @pytest.mark.parametrize('page_data', al_page.get_jbd_urls())
-    # def test_compare_jbd_list(page_data):
-    #     try:
-    #         run_comparison(page_data['pro_url'], page_data['pre_url'], page_data['pre_list_screenshots_path'],
-    #                        page_data['pre_detail_screenshots_path'], page_data['pro_list_screenshots_path'],
-    #                        page_data['pro_detail_screenshots_path'], page_data['list_diff_image_path'],
-    #                        page_data['detail_diff_image_path']
-    #                        )
-    #     except Exception as e:
-    #         print("Exception occurred:", e)
+    # def test_compare_jbd_list(self, page_data):
+    #     run_comparison(page_data['pro_url'], page_data['pre_url'], page_data['pre_list_screenshots_path'],
+    #                    page_data['pre_detail_screenshots_path'], page_data['pro_list_screenshots_path'],
+    #                    page_data['pro_detail_screenshots_path'], page_data['list_diff_image_path'],
+    #                    page_data['detail_diff_image_path']
+    #                    )
+
     #
     #
     # @pytest.mark.parametrize('page_data', al_page.get_sod_urls())

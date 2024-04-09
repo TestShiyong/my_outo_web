@@ -66,7 +66,7 @@ class BasePage:
         try:
             loc_obj.click()
         except Exception as error:
-            log.exception("点击元素失败")
+            log.exception(f"点击元素失败{page_action}")
             self.get_page_img(page_action)
             raise error
 
@@ -128,29 +128,26 @@ class BasePage:
     def remover_activity_bar(self):
         activity_bar_loc = By.ID, 'activity_bar'
         try:
-            element_remove_bar = self.driver.find_element(*activity_bar_loc)
-            self.driver.execute_script("arguments[0].parentNode.removeChild(arguments[0]);", element_remove_bar)
+            element_activity_bar = self.get_element(activity_bar_loc)
+            self.driver.execute_script("arguments[0].parentNode.removeChild(arguments[0]);", element_activity_bar)
         except NoSuchElementException:
-            print("未找到指定元素 activity_bar")
+            print("移除 activity_bar 失败")
 
     def scroll_to_bottom(self):
         """
         将浏览器滚动到页面底部
         :param driver: WebDriver对象
         """
-        self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+        try:
+            self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+        except:
+            log.exception('将浏览器滚动到页面底部 error')
 
-    def click_random_commodity(self, random_number=None):
-        all_commoditys = By.XPATH, '//a[@data-datalayer-category="PlusSizeGowns"]'
-        if random_number:
-            rd = random_number
-            self.scroll_to_bottom()
-            self.close_new_user_pop()
-            self.click_element(all_commoditys, '随机 点击BD列表页商品', rd)
-        else:
-            rd = random.randint(0, 60)
-            self.scroll_to_bottom()
-            self.click_element(all_commoditys, '随机 点击BD列表页商品', rd)
+    def click_random_commodity(self, random_index=None):
+        commodity_locator = By.XPATH, '//a[@data-datalayer-category="PlusSizeGowns"]'
+        self.scroll_to_bottom()
+        self.close_new_user_popup()
+        self.click_element(commodity_locator, '随机点击BD列表页商品', random_index)
 
     def scroll_to_element(self, element):
         """
@@ -160,10 +157,17 @@ class BasePage:
         """
         self.driver.execute_script("arguments[0].scrollIntoView();", element)
 
-    def close_new_user_pop(self, loc=None):
+    def close_new_user_popup(self, loc=None):
         loc = loc if loc else By.XPATH, '//button[@aria-label="Close button"]'
-
         self.click_element(loc, '关闭新客弹窗')
+
+    def create_directory_if_not_exists(self, directory):
+        if not os.path.exists(directory):
+            os.makedirs(directory)
+
+    def save_screenshot(self,base_path, directory):
+        self.create_directory_if_not_exists(base_path)
+        self.driver.save_screenshot(directory)
 
 
 if __name__ == '__main__':

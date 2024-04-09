@@ -40,7 +40,7 @@ class Singleton:
 
     def __new__(cls, *args, **kwargs):
         if not cls._instance:
-            super(Singleton, cls).__new__(cls)
+            cls._instance = super(Singleton, cls).__new__(cls)
         return cls._instance
 
 
@@ -62,22 +62,23 @@ def singleton_instance(cls):
 
 
 if __name__ == '__main__':
-    obj1 = Singleton()
-    obj2 = Singleton()
-    print(id(obj1))
-    print(id(obj2))
-
-
-    @singleton_instance
-    class SingletonInstance:
-        def __init__(self, name):
-            self.name = name
-
-        def run(self):
-            print('run-----------------------')
-
-
-    instance = SingletonInstance('SHIYONG')
-    instance2 = SingletonInstance('SHIYONG')
-    print(id(instance))
-    print(id(instance2))
+    pass
+    # obj1 = Singleton()
+    # obj2 = Singleton()
+    # print(id(obj1))
+    # print(id(obj2))
+    #
+    #
+    # @singleton_instance
+    # class SingletonInstance:
+    #     def __init__(self, name):
+    #         self.name = name
+    #
+    #     def run(self):
+    #         print('run-----------------------')
+    #
+    #
+    # instance = SingletonInstance('SHIYONG')
+    # instance2 = SingletonInstance('SHIYONG')
+    # print(id(instance))
+    # print(id(instance2))

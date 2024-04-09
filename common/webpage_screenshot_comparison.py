@@ -7,7 +7,16 @@ from common.basepage import BasePage
 import random
 
 
-def take_screenshot(url, list_screenshot_path, detail_screenshot_path, random_number):
+def create_driver(is_headers=True):
+    options = webdriver.ChromeOptions()
+    if not is_headers:
+        options.add_argument('--headless')
+    driver = webdriver.Chrome(options=options)
+    driver.set_window_size(1920, 1080)  # 设置窗口大小为1920x1080像素
+    return driver
+
+
+def take_screenshot(url, list_screenshot_path, base_path, detail_screenshot_path, random_number):
     """
 
     :param url:
@@ -17,28 +26,14 @@ def take_screenshot(url, list_screenshot_path, detail_screenshot_path, random_nu
     :return:
     """
 
-    # 设置Chrome选项，运行在无界面模式（无GUI）
-    options = webdriver.ChromeOptions()
-    # options.add_argument('--headless')
-    driver = webdriver.Chrome(options=options)
-    base_page = BasePage(driver)
-
-    try:
-        # 打开网页并保存截图
-        driver.set_window_size(1920, 1080)  # 设置窗口大小为1920x1080像素
-        driver.get(url)
-        base_page.remover_activity_bar()
-        # 截图列表页
-        base_page.driver.save_screenshot(list_screenshot_path)
-        base_page.click_random_commodity(random_number)
-        # 截图详情页
-        base_page.switch_to_window()
-        base_page.driver.save_screenshot(detail_screenshot_path)
-    except Exception:
-        print('webdriver异常 。。。。。。。。。。。。。。。。。。。。。。。。。。。')
-
-    finally:
-        driver.quit()
+    base_page = BasePage(create_driver())
+    base_page.driver.get(url)
+    base_page.remover_activity_bar()
+    base_page.save_screenshot(base_path, list_screenshot_path)
+    base_page.click_random_commodity(random_number)
+    base_page.switch_to_window()
+    base_page.remover_activity_bar()
+    base_page.save_screenshot(base_path, detail_screenshot_path)
 
 
 def compare_images(pre_img, online_img, threshold=30):
@@ -84,15 +79,20 @@ def mark_differences(pre_img, online_img, diff_image_path, threshold=30):
     combined_img.save(diff_image_path)
 
 
-def run_comparison(pro_url, pre_url, pre_list_screenshots_path, pre_detail_screenshots_path, pro_list_screenshots_path,
+def run_comparison(pro_url, pre_url, base_path, pre_list_screenshots_path, pre_detail_screenshots_path,
+                   pro_list_screenshots_path,
                    pro_detail_screenshots_path, list_diff_image_path, detail_diff_image_path):
+    # 设置Chrome选项，运行在无界面模式（无GUI）
+
     random_number = random.randint(1, 60)
     # 创建两个线程，分别加载预发布和在线环境的截图
     thread1 = threading.Thread(target=take_screenshot,
-                               args=(pre_url, pre_list_screenshots_path, pre_detail_screenshots_path, random_number))
+                               args=(pre_url, pre_list_screenshots_path, base_path, pre_detail_screenshots_path,
+                                     random_number))
 
     thread2 = threading.Thread(target=take_screenshot,
-                               args=(pro_url, pro_list_screenshots_path, pro_detail_screenshots_path, random_number))
+                               args=(pro_url, pro_list_screenshots_path, base_path, pro_detail_screenshots_path,
+                                     random_number))
 
     # 启动线程
     thread1.start()
