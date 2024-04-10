@@ -16,7 +16,7 @@ def create_driver(is_headers=True):
     return driver
 
 
-def take_screenshot(url, list_screenshot_path, base_path, detail_screenshot_path, random_number):
+def take_screenshot(url, list_screenshot_path, base_path, detail_screenshot_path, random_number, quick_shop):
     """
 
     :param url:
@@ -27,10 +27,11 @@ def take_screenshot(url, list_screenshot_path, base_path, detail_screenshot_path
     """
 
     base_page = BasePage(create_driver())
+    base_page.driver.implicitly_wait(10)
     base_page.driver.get(url)
     base_page.remover_activity_bar()
     base_page.save_screenshot(base_path, list_screenshot_path)
-    base_page.click_random_commodity(random_number)
+    base_page.click_random_commodity(quick_shop, random_index=random_number)
     base_page.switch_to_window()
     base_page.remover_activity_bar()
     base_page.driver.execute_script("document.body.style.zoom='67%'")  # 80% 的缩放比例
@@ -81,19 +82,19 @@ def mark_differences(pre_img, online_img, diff_image_path, threshold=30):
 
 
 def run_comparison(pro_url, pre_url, base_path, pre_list_screenshots_path, pre_detail_screenshots_path,
-                   pro_list_screenshots_path,
-                   pro_detail_screenshots_path, list_diff_image_path, detail_diff_image_path):
+                   pro_list_screenshots_path, pro_detail_screenshots_path, list_diff_image_path, detail_diff_image_path,
+                   quick_shop):
     # 设置Chrome选项，运行在无界面模式（无GUI）
 
     random_number = random.randint(1, 60)
     # 创建两个线程，分别加载预发布和在线环境的截图
     thread1 = threading.Thread(target=take_screenshot,
                                args=(pre_url, pre_list_screenshots_path, base_path, pre_detail_screenshots_path,
-                                     random_number))
+                                     random_number, quick_shop))
 
     thread2 = threading.Thread(target=take_screenshot,
                                args=(pro_url, pro_list_screenshots_path, base_path, pro_detail_screenshots_path,
-                                     random_number))
+                                     random_number, quick_shop))
 
     # 启动线程
     thread1.start()

@@ -36,8 +36,8 @@ class BasePage:
             end = time.time()
             log.info(f'等待元素({loc})成功，等待时间为:{start - end}')
 
-    def get_element(self, loc, page_action=None, index=None, ):
-        self.__waite_ele_visible(loc, page_action)
+    def get_element(self, loc, page_action=None, index=None, time_out=20):
+        self.__waite_ele_visible(loc, page_action, time_out=time_out)
         if page_action:
             log.info('在  {}  行为,查找元素：{}'.format(page_action, loc))
         if index:
@@ -143,10 +143,12 @@ class BasePage:
         except:
             log.exception('将浏览器滚动到页面底部 error')
 
-    def click_random_commodity(self, random_index=None):
+    def click_random_commodity(self, quick_shop, random_index=None):
         commodity_locator = By.XPATH, '//a[@data-datalayer-category="PlusSizeGowns"]'
         self.scroll_to_bottom()
         self.close_new_user_popup()
+        if quick_shop:
+            self.remover_quick_shop(goods_index=random_index)
         time.sleep(2)
         self.click_element(commodity_locator, '随机点击BD列表页商品', random_index)
 
@@ -166,9 +168,17 @@ class BasePage:
         if not os.path.exists(directory):
             os.makedirs(directory)
 
-    def save_screenshot(self,base_path, directory):
+    def save_screenshot(self, base_path, directory):
         self.create_directory_if_not_exists(base_path)
         self.driver.save_screenshot(directory)
+
+    def remover_quick_shop(self, goods_index):
+        activity_bar_loc = By.XPATH, '//p[@class="quick-shop-text"]'
+        try:
+            element_activity_bar = self.get_element(activity_bar_loc, index=goods_index, time_out=3)
+            self.driver.execute_script("arguments[0].parentNode.removeChild(arguments[0]);", element_activity_bar)
+        except NoSuchElementException:
+            print("移除 quick shop 失败")
 
 
 if __name__ == '__main__':

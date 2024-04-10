@@ -71,7 +71,7 @@ RTS_PAGES = {
 }
 
 
-def handle_page_datas(pro_url, pre_url, page_items, cate_name):
+def handle_page_datas(pro_url, pre_url, page_items, cate_name, quick_shop):
     """
 
     :param pro_url:
@@ -98,6 +98,7 @@ def handle_page_datas(pro_url, pre_url, page_items, cate_name):
                                 "pro_detail_screenshots_path": pro_detail_screenshots_path,
                                 "list_diff_image_path": list_diff_image_path,
                                 "detail_diff_image_path": detail_diff_image_path,
+                                "quick_shop": quick_shop
 
                                 })
     return list_page_datas
@@ -105,42 +106,53 @@ def handle_page_datas(pro_url, pre_url, page_items, cate_name):
 
 def get_bd_urls():
     cate_name = 'bd'
-    return handle_page_datas(PRO_BASE_URL, PRE_BASE_URL, BD_PAGES, cate_name)
+    quick_shop = False
+    return handle_page_datas(PRO_BASE_URL, PRE_BASE_URL, BD_PAGES, cate_name, quick_shop)
 
 
 def get_mob_urls():
     cate_name = 'mob'
-    return handle_page_datas(PRO_BASE_URL, PRE_BASE_URL, MOB_PAGES, cate_name)
+    quick_shop = False
+
+    return handle_page_datas(PRO_BASE_URL, PRE_BASE_URL, MOB_PAGES, cate_name, quick_shop)
 
 
 def get_jbd_urls():
     cate_name = 'jbd'
-    return handle_page_datas(PRO_BASE_URL, PRE_BASE_URL, JBD_PAGES, cate_name)
+    quick_shop = False
+    return handle_page_datas(PRO_BASE_URL, PRE_BASE_URL, JBD_PAGES, cate_name, quick_shop)
 
 
 def get_sod_urls():
     cate_name = 'sod'
-    return handle_page_datas(PRO_BASE_URL, PRE_BASE_URL, SOD_PAGES, cate_name)
+    quick_shop = False
+
+    return handle_page_datas(PRO_BASE_URL, PRE_BASE_URL, SOD_PAGES, cate_name, quick_shop)
 
 
 def get_acc_urls():
     cate_name = 'acc'
-    return handle_page_datas(PRO_BASE_URL, PRE_BASE_URL, ACC_PAGES, cate_name)
+    quick_shop = True
+    return handle_page_datas(PRO_BASE_URL, PRE_BASE_URL, ACC_PAGES, cate_name, quick_shop)
 
 
 def get_sample_urls():
     cate_name = 'sample'
-    return handle_page_datas(PRO_BASE_URL, PRE_BASE_URL, SAMPLE_PAGES, cate_name)
+    quick_shop = False
+    return handle_page_datas(PRO_BASE_URL, PRE_BASE_URL, SAMPLE_PAGES, cate_name, quick_shop)
 
 
 def get_swatch_urls():
     cate_name = 'swatch'
-    return handle_page_datas(PRO_BASE_URL, PRE_BASE_URL, SWATCH_PAGES, cate_name)
+    quick_shop = True
+
+    return handle_page_datas(PRO_BASE_URL, PRE_BASE_URL, SWATCH_PAGES, cate_name, quick_shop)
 
 
 def get_rts_urls():
     cate_name = 'rts'
-    return handle_page_datas(PRO_BASE_URL, PRE_BASE_URL, RTS_PAGES, cate_name)
+    quick_shop = False
+    return handle_page_datas(PRO_BASE_URL, PRE_BASE_URL, RTS_PAGES, cate_name, quick_shop)
 
 
 if __name__ == '__main__':
