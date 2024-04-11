@@ -11,8 +11,11 @@ def create_driver(is_headers=False):
     options = webdriver.ChromeOptions()
     if not is_headers:
         options.add_argument('--headless')
-    driver = webdriver.Chrome(options=options)
-    driver.maximize_window()
+        driver = webdriver.Chrome(options=options)
+        driver.set_window_size(1920, 1080)
+    else:
+        driver = webdriver.Chrome(options=options)
+        driver.maximize_window()
     return driver
 
 
@@ -29,10 +32,11 @@ def take_screenshot(url, list_screenshot_path, base_path, detail_screenshot_path
     base_page = BasePage(create_driver())
 
     base_page.driver.get(url)
+
     base_page.driver.implicitly_wait(5)
     base_page.remover_activity_bar()
     base_page.save_screenshot(base_path, list_screenshot_path)
-    base_page.click_random_commodity(quick_shop, random_index=random_number)
+    base_page.click_random_commodity(quick_shop,random_index=random_number)
     base_page.switch_to_window()
     base_page.remover_activity_bar()
     base_page.driver.execute_script("document.body.style.zoom='67%'")  # 80% 的缩放比例

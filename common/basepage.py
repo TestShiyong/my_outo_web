@@ -20,6 +20,10 @@ class BasePage:
     def __init__(self, drever: WebDriver):
         self.driver = drever
 
+    def get_to_url(self,url):
+        self.driver.get(url)
+        log.info(f'get to *******************:({url})')
+
     def __waite_ele_visible(self, loc, page_action=None, time_out=20):
         if page_action:
             log.info('在 {} 行为,等待元素：{} 可见'.format(page_action, loc))
@@ -163,7 +167,7 @@ class BasePage:
         except:
             log.exception('将浏览器滚动到页面底部 error')
 
-    def click_random_commodity(self, quick_shop, random_index=None):
+    def click_random_commodity(self, quick_shop,page_action, random_index=None):
         commodity_locator = By.XPATH, '//a[@data-datalayer-category="PlusSizeGowns"]'
         self.scroll_to_bottom()
         self.close_new_user_popup()
@@ -171,7 +175,7 @@ class BasePage:
             self.remover_quick_shop(goods_index=random_index)
         time.sleep(2)
 
-        self.click_element(commodity_locator, '随机点击BD列表页商品', random_index)
+        self.click_element(commodity_locator, '随机点击列表页商品', random_index)
 
     def scroll_to_element(self, element):
         """
