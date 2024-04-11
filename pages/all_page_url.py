@@ -1,6 +1,8 @@
 from common.handle_red_conf_file import cf
 from base_path import screenshots_path
 import os
+import requests
+from T import get_acc_datas
 
 PRO_BASE_URL = cf.get_str('URL', 'PRO_BASE_URL')
 PRE_BASE_URL = cf.get_str('URL', 'PRE_BASE_URL')
@@ -22,19 +24,21 @@ JBD_PAGES = {'list_page_all_jbd_url': '/all/all-junior',
 
 SOD_PAGES = {'list_page_sod_url': '/all/atelier-dresses'}
 
-ACC_PAGES = {'list_page_all_acc_url': '/all/accessories',
-             'list_page_groomsmen_rul': '/all/groomsmen-accessories',
-             'list_page_shoes_url': '/all/shoes',
-             'list_page_jewelry_url': '/all/jewelry',
-             'list_page_headpieces': '/all/headpieces',
-             'list_page_shapewear': '/all/shapewear',
-             'list_page_wraps': '/all/wraps',
-             'list_page_wedding_veils': '/all/wedding-veils',
-             'list_page_sashes': '/all/sashes',
-             'list_page_robes': '/all/robes',
-             'list_page_gifts': '/all/gifts',
-             'list_page_separates': '/all/separates',
-             'list_page_garment_bags': '/all/garment-bags'}
+ACC_PAGES = [{'list_page_all_acc_url': '/all/accessories', '': ''},
+             {'list_page_groomsmen_rul': '/all/groomsmen-accessories', '': ''},
+             {'list_page_shoes_url': '/all/shoes', '': ''},
+             {'list_page_bags_url': '/all/bags'},
+             {'list_page_jewelry_url': '/all/jewelry', '': ''},
+             {'list_page_shapewear': '/all/shapewear', '': ''},
+             {'list_page_wraps': '/all/wraps', '': ''},
+             {'list_page_headpieces': '/all/headpieces', '': ''},
+
+             {'list_page_wedding_veils': '/all/wedding-veils', '': ''},
+             {'list_page_sashes': '/all/sashes', '': ''},
+             {'list_page_robes': '/all/robes', '': ''},
+             {'list_page_gifts': '/all/gifts', '': ''},
+             {'list_page_separates': '/all/separates', '': ''},
+             {'list_page_garment_bags': '/all/garment-bags', '': ''}]
 
 SAMPLE_PAGES = {
     # 'list_page_all_sample_url': '/all/sample-dresses?current_in_stock=yes',
@@ -104,6 +108,41 @@ def handle_page_datas(pro_url, pre_url, page_items, cate_name, quick_shop):
     return list_page_datas
 
 
+def handle_acc_datas(pro_url, pre_url, category_items, cate_name, quick_shop):
+    """
+
+    :param pro_url:
+    :param pre_url:
+    :param page_items:
+    :param cate_name:
+    :return:
+    """
+    list_page_datas = []
+    for page_items in category_items:
+        goods_number = page_items['goods_number']
+        del page_items['goods_number']
+        for name, url in page_items.items():
+            base_path = os.path.join(screenshots_path, cate_name)
+            pre_list_screenshots_path = os.path.join(screenshots_path, cate_name, name + "_list_pre.png")
+            pre_detail_screenshots_path = os.path.join(screenshots_path, cate_name, name + "_detail_pre.png")
+            pro_list_screenshots_path = os.path.join(screenshots_path, cate_name, name + "_list_pro.png")
+            pro_detail_screenshots_path = os.path.join(screenshots_path, cate_name, name + "_detail_pro.png")
+            list_diff_image_path = os.path.join(screenshots_path, cate_name, name + "_list_diff.png")
+            detail_diff_image_path = os.path.join(screenshots_path, cate_name, name + "_detail_diff.png")
+
+            list_page_datas.append({'pro_url': pro_url + url, 'pre_url': pre_url + url, 'base_path': base_path,
+                                    "pre_list_screenshots_path": pre_list_screenshots_path,
+                                    "pre_detail_screenshots_path": pre_detail_screenshots_path,
+                                    "pro_list_screenshots_path": pro_list_screenshots_path,
+                                    "pro_detail_screenshots_path": pro_detail_screenshots_path,
+                                    "list_diff_image_path": list_diff_image_path,
+                                    "detail_diff_image_path": detail_diff_image_path,
+                                    "quick_shop": quick_shop,
+                                    "goods_number":goods_number
+                                    })
+    return list_page_datas
+
+
 def get_bd_urls():
     cate_name = 'bd'
     quick_shop = False
@@ -133,7 +172,8 @@ def get_sod_urls():
 def get_acc_urls():
     cate_name = 'acc'
     quick_shop = True
-    return handle_page_datas(PRO_BASE_URL, PRE_BASE_URL, ACC_PAGES, cate_name, quick_shop)
+    acc_datas = get_acc_datas()
+    return handle_acc_datas(PRO_BASE_URL, PRE_BASE_URL, acc_datas, cate_name, quick_shop)
 
 
 def get_sample_urls():
@@ -156,6 +196,9 @@ def get_rts_urls():
 
 
 if __name__ == '__main__':
-    li = get_bd_urls()
+    li = get_acc_urls()
     for i in li:
         print(i)
+    # li2 = get_bd_urls()
+    # for j in li2:
+    #     print(j)

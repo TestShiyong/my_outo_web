@@ -36,8 +36,28 @@ class BasePage:
             end = time.time()
             log.info(f'等待元素({loc})成功，等待时间为:{start - end}')
 
-    def get_element(self, loc, page_action=None, index=None, time_out=20):
-        self.__waite_ele_visible(loc, page_action, time_out=time_out)
+    def __waite_ele_exists(self, loc, page_action=None, time_out=20):
+        if page_action:
+            log.info('在 {} 行为,等待元素：{} 可见'.format(page_action, loc))
+        # 等待开始时间
+        start = time.time()
+        # 捕捉异常
+        try:
+            WebDriverWait(self.driver, time_out).until(EC.presence_of_element_located(loc))
+        except Exception as error:
+            log.exception(f"等待({loc})元素存在失败")
+            self.get_page_img(page_action)
+            raise error
+        else:
+            end = time.time()
+            log.info(f'等待元素({loc})成功，等待时间为:{start - end}')
+
+    def get_element(self, loc, page_action=None, index=None, time_out=20, ele_exists=False):
+        if ele_exists:
+            self.__waite_ele_exists(loc, page_action)
+        else:
+
+            self.__waite_ele_visible(loc, page_action, time_out=time_out)
         if page_action:
             log.info('在  {}  行为,查找元素：{}'.format(page_action, loc))
         if index:
@@ -128,7 +148,7 @@ class BasePage:
     def remover_activity_bar(self):
         activity_bar_loc = By.ID, 'activity_bar'
         try:
-            element_activity_bar = self.get_element(activity_bar_loc)
+            element_activity_bar = self.get_element(activity_bar_loc,ele_exists=True)
             self.driver.execute_script("arguments[0].parentNode.removeChild(arguments[0]);", element_activity_bar)
         except NoSuchElementException:
             print("移除 activity_bar 失败")
@@ -150,6 +170,7 @@ class BasePage:
         if quick_shop:
             self.remover_quick_shop(goods_index=random_index)
         time.sleep(2)
+
         self.click_element(commodity_locator, '随机点击BD列表页商品', random_index)
 
     def scroll_to_element(self, element):
@@ -173,12 +194,16 @@ class BasePage:
         self.driver.save_screenshot(directory)
 
     def remover_quick_shop(self, goods_index):
-        activity_bar_loc = By.XPATH, '//p[@class="quick-shop-text"]'
+        activity_bar_loc = By.XPATH, '//div[@class="quick-shop"]'
         try:
-            element_activity_bar = self.get_element(activity_bar_loc, index=goods_index, time_out=3)
+            element_activity_bar = self.get_element(activity_bar_loc, index=goods_index, time_out=5,ele_exists=True)
             self.driver.execute_script("arguments[0].parentNode.removeChild(arguments[0]);", element_activity_bar)
         except NoSuchElementException:
             print("移除 quick shop 失败")
+
+    def get_element_number(self):
+        goods_number = len(self.driver.find_elements())
+        return goods_number
 
 
 if __name__ == '__main__':
