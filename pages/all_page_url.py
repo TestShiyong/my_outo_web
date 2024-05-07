@@ -24,22 +24,6 @@ JBD_PAGES = {'list_page_all_jbd_url': '/all/all-junior',
 
 SOD_PAGES = {'list_page_sod_url': '/all/atelier-dresses'}
 
-ACC_PAGES = [{'list_page_all_acc_url': '/all/accessories', '': ''},
-             {'list_page_groomsmen_rul': '/all/groomsmen-accessories', '': ''},
-             {'list_page_shoes_url': '/all/shoes', '': ''},
-             {'list_page_bags_url': '/all/bags'},
-             {'list_page_jewelry_url': '/all/jewelry', '': ''},
-             {'list_page_shapewear': '/all/shapewear', '': ''},
-             {'list_page_wraps': '/all/wraps', '': ''},
-             {'list_page_headpieces': '/all/headpieces', '': ''},
-
-             {'list_page_wedding_veils': '/all/wedding-veils', '': ''},
-             {'list_page_sashes': '/all/sashes', '': ''},
-             {'list_page_robes': '/all/robes', '': ''},
-             {'list_page_gifts': '/all/gifts', '': ''},
-             {'list_page_separates': '/all/separates', '': ''},
-             {'list_page_garment_bags': '/all/garment-bags', '': ''}]
-
 SAMPLE_PAGES = {
     # 'list_page_all_sample_url': '/all/sample-dresses?current_in_stock=yes',
     'list_page_wd_sample_url': '/all/sample-brides?current_in_stock=yes',
@@ -138,7 +122,7 @@ def handle_acc_datas(pro_url, pre_url, category_items, cate_name, quick_shop):
                                     "list_diff_image_path": list_diff_image_path,
                                     "detail_diff_image_path": detail_diff_image_path,
                                     "quick_shop": quick_shop,
-                                    "goods_number":goods_number
+                                    "goods_number": goods_number
                                     })
     return list_page_datas
 

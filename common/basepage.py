@@ -20,7 +20,7 @@ class BasePage:
     def __init__(self, drever: WebDriver):
         self.driver = drever
 
-    def get_to_url(self,url):
+    def get_to_url(self, url):
         self.driver.get(url)
         log.info(f'get to *******************:({url})')
 
@@ -152,7 +152,7 @@ class BasePage:
     def remover_activity_bar(self):
         activity_bar_loc = By.ID, 'activity_bar'
         try:
-            element_activity_bar = self.get_element(activity_bar_loc,ele_exists=True)
+            element_activity_bar = self.get_element(activity_bar_loc, ele_exists=True)
             self.driver.execute_script("arguments[0].parentNode.removeChild(arguments[0]);", element_activity_bar)
         except NoSuchElementException:
             print("移除 activity_bar 失败")
@@ -167,7 +167,7 @@ class BasePage:
         except:
             log.exception('将浏览器滚动到页面底部 error')
 
-    def click_random_commodity(self, quick_shop,page_action, random_index=None):
+    def click_random_commodity(self, quick_shop, page_action, random_index=None):
         commodity_locator = By.XPATH, '//a[@data-datalayer-category="PlusSizeGowns"]'
         self.scroll_to_bottom()
         self.close_new_user_popup()
@@ -200,7 +200,7 @@ class BasePage:
     def remover_quick_shop(self, goods_index):
         activity_bar_loc = By.XPATH, '//div[@class="quick-shop"]'
         try:
-            element_activity_bar = self.get_element(activity_bar_loc, index=goods_index, time_out=5,ele_exists=True)
+            element_activity_bar = self.get_element(activity_bar_loc, index=goods_index, time_out=5, ele_exists=True)
             self.driver.execute_script("arguments[0].parentNode.removeChild(arguments[0]);", element_activity_bar)
         except NoSuchElementException:
             print("移除 quick shop 失败")

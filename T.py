@@ -32,12 +32,16 @@ def get_category_goods_number(cat_name, origin_url):
 
 
 def get_all_category_goods_numbers():
-    cat_names = ['accessories', 'groomsmen-accessories', 'shoes', 'bags', 'jewelry', 'headpieces', 'shapewear', 'wraps',
-                 'wedding-veils', 'sashes', 'robes', 'gifts', 'separates', 'garment-bags']
+    # cat_names = ['accessories', 'groomsmen-accessories', 'shoes', 'bags', 'jewelry', 'headpieces', 'shapewear', 'wraps',
+    #              'wedding-veils', 'sashes', 'robes', 'gifts', 'separates', 'garment-bags']
+    #
+    # origin_urls = ["/all/accessories", "/all/groomsmen-accessories", "/all/shoes", "/all/bags", "/all/jewelry",
+    #                "/all/headpieces", "/all/shapewear", "/all/wraps", "/all/wedding-veils", "/all/sashes", "/all/robes",
+    #                "/all/gifts", "/all/separates", "/all/garment-bags"]
 
-    origin_urls = ["/all/accessories", "/all/groomsmen-accessories", "/all/shoes", "/all/bags", "/all/jewelry",
-                   "/all/headpieces", "/all/shapewear", "/all/wraps", "/all/wedding-veils", "/all/sashes", "/all/robes",
-                   "/all/gifts", "/all/separates", "/all/garment-bags"]
+    cat_names = ['separates', 'garment-bags']
+
+    origin_urls = [ "/all/separates", "/all/garment-bags"]
     # 存储结果的字典
     goods_numbers = {}
 
@@ -51,21 +55,36 @@ def get_all_category_goods_numbers():
 
 def get_acc_datas():
     goods_numbers = get_all_category_goods_numbers()
-    ACC_PAGES = [{'list_page_all_acc_url': '/all/accessories', 'goods_number': goods_numbers['accessories']},
-                 {'list_page_groomsmen_rul': '/all/groomsmen-accessories',
-                  'goods_number': goods_numbers['groomsmen-accessories']},
-                 {'list_page_shoes_url': '/all/shoes', 'goods_number': goods_numbers['shoes']},
-                 {'list_page_bags_url': '/all/bags', 'goods_number': goods_numbers['bags']},
-                 {'list_page_jewelry_url': '/all/jewelry', 'goods_number': goods_numbers['jewelry']},
-                 {'list_page_shapewear': '/all/shapewear', 'goods_number': goods_numbers['headpieces']},
-                 {'list_page_wraps': '/all/wraps', 'goods_number': goods_numbers['shapewear']},
-                 {'list_page_headpieces': '/all/headpieces', 'goods_number': goods_numbers['wraps']},
-
-                 {'list_page_wedding_veils': '/all/wedding-veils', 'goods_number': goods_numbers['wedding-veils']},
-                 {'list_page_sashes': '/all/sashes', 'goods_number': goods_numbers['sashes']},
-                 {'list_page_robes': '/all/robes', 'goods_number': goods_numbers['robes']},
-                 {'list_page_gifts': '/all/gifts', 'goods_number': goods_numbers['gifts']},
+    # ACC_PAGES = [{'list_page_all_acc_url': '/all/accessories', 'goods_number': goods_numbers['accessories']},
+    #              {'list_page_groomsmen_rul': '/all/groomsmen-accessories',  'goods_number': goods_numbers['groomsmen-accessories']},
+    #              {'list_page_shoes_url': '/all/shoes', 'goods_number': goods_numbers['shoes']},
+    #              {'list_page_bags_url': '/all/bags', 'goods_number': goods_numbers['bags']},
+    #              {'list_page_jewelry_url': '/all/jewelry', 'goods_number': goods_numbers['jewelry']},
+    #              {'list_page_shapewear': '/all/shapewear', 'goods_number': goods_numbers['headpieces']},
+    #              {'list_page_wraps': '/all/wraps', 'goods_number': goods_numbers['shapewear']},
+    #              {'list_page_headpieces': '/all/headpieces', 'goods_number': goods_numbers['wraps']},
+    #
+    #              {'list_page_wedding_veils': '/all/wedding-veils', 'goods_number': goods_numbers['wedding-veils']},
+    #              {'list_page_sashes': '/all/sashes', 'goods_number': goods_numbers['sashes']},
+    #              {'list_page_robes': '/all/robes', 'goods_number': goods_numbers['robes']},
+    #              {'list_page_gifts': '/all/gifts', 'goods_number': goods_numbers['gifts']},
+    #              {'list_page_separates': '/all/separates', 'goods_number': goods_numbers['separates']},
+    #              {'list_page_garment_bags': '/all/garment-bags', 'goods_number': goods_numbers['garment-bags']}
+    #              ]
+    ACC_PAGES = [
+        # {'list_page_all_acc_url': '/all/accessories', 'goods_number': goods_numbers['accessories']},
+        #          {'list_page_groomsmen_rul': '/all/groomsmen-accessories',  'goods_number': goods_numbers['groomsmen-accessories']},
+        #          {'list_page_shoes_url': '/all/shoes', 'goods_number': goods_numbers['shoes']},
+        #          {'list_page_bags_url': '/all/bags', 'goods_number': goods_numbers['bags']},
+        #          {'list_page_jewelry_url': '/all/jewelry', 'goods_number': goods_numbers['jewelry']},
+        #          {'list_page_shapewear': '/all/shapewear', 'goods_number': goods_numbers['headpieces']},
+        #          {'list_page_wraps': '/all/wraps', 'goods_number': goods_numbers['shapewear']},
+        #          {'list_page_headpieces': '/all/headpieces', 'goods_number': goods_numbers['wraps']},
+        #
+        #          {'list_page_wedding_veils': '/all/wedding-veils', 'goods_number': goods_numbers['wedding-veils']},
+        #          {'list_page_sashes': '/all/sashes', 'goods_number': goods_numbers['sashes']},
+        #          {'list_page_robes': '/all/robes', 'goods_number': goods_numbers['robes']},
+        #          {'list_page_gifts': '/all/gifts', 'goods_number': goods_numbers['gifts']},
                  {'list_page_separates': '/all/separates', 'goods_number': goods_numbers['separates']},
-                 {'list_page_garment_bags': '/all/garment-bags', 'goods_number': goods_numbers['garment-bags']}
-                 ]
+                 {'list_page_garment_bags': '/all/garment-bags', 'goods_number': goods_numbers['garment-bags']}]
     return ACC_PAGES
