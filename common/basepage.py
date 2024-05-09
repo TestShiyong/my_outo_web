@@ -170,6 +170,7 @@ class BasePage:
     def click_random_commodity(self, quick_shop, page_action, random_index=None):
         commodity_locator = By.XPATH, '//a[@data-datalayer-category="PlusSizeGowns"]'
         self.scroll_to_bottom()
+
         self.close_new_user_popup()
         if quick_shop:
             self.remover_quick_shop(goods_index=random_index)
@@ -187,7 +188,10 @@ class BasePage:
 
     def close_new_user_popup(self, loc=None):
         loc = loc if loc else By.XPATH, '//button[@aria-label="Close button"]'
-        self.click_element(loc, '关闭新客弹窗')
+        try:
+            self.click_element(loc, '关闭新客弹窗')
+        except:
+            print('关闭新客弹窗失败')
 
     def create_directory_if_not_exists(self, directory):
         if not os.path.exists(directory):
@@ -202,7 +206,7 @@ class BasePage:
         try:
             element_activity_bar = self.get_element(activity_bar_loc, index=goods_index, time_out=5, ele_exists=True)
             self.driver.execute_script("arguments[0].parentNode.removeChild(arguments[0]);", element_activity_bar)
-        except NoSuchElementException:
+        except:
             print("移除 quick shop 失败")
 
     def get_element_number(self):

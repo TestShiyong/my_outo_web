@@ -1,7 +1,7 @@
 import pytest
 
 from common.webpage_screenshot_comparison import run_comparison
-from pages import all_page_url as al_page
+from pages import all_page_data
 
 
 class TestPageComparison:
@@ -33,10 +33,10 @@ class TestPageComparison:
     #                    page_data['detail_diff_image_path']
     #                    )
     #
-    @pytest.mark.parametrize('page_data', al_page.get_acc_urls())
+    @pytest.mark.parametrize('page_data', all_page_data.get_acc_urls())
     def test_compare_acc_list(self, page_data):
-        if page_data['goods_number'] == 0:
-            return
+        # if page_data['goods_number'] == 0:
+        #     pytest.skip("Skipping test because goods_number is 0")
         run_comparison(page_data['pro_url'], page_data['pre_url'], page_data['base_path'],
                        page_data['pre_list_screenshots_path'],
                        page_data['pre_detail_screenshots_path'], page_data['pro_list_screenshots_path'],

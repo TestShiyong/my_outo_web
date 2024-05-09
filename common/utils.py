@@ -1,4 +1,4 @@
-from pages import all_page_url as pgs
+from pages import all_page_data as pgs
 import pytest
 
 

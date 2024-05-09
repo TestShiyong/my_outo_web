@@ -30,9 +30,7 @@ def take_screenshot(url, list_screenshot_path, base_path, detail_screenshot_path
     """
 
     base_page = BasePage(create_driver())
-
     base_page.driver.get(url)
-
     base_page.driver.implicitly_wait(5)
     base_page.remover_activity_bar()
     base_page.save_screenshot(base_path, list_screenshot_path)

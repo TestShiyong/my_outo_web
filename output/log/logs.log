@@ -1,4 +1,4 @@
-2024-05-07 15:43:04,428:mylog:__waite_ele_exists:basepage.py:52:ERROR:等待(('id', 'activity_bar'))元素存在失败
+2024-05-09 16:49:59,382:mylog:__waite_ele_exists:basepage.py:52:ERROR:等待(('id', 'activity_bar'))元素存在失败
 Traceback (most recent call last):
   File "D:\Shiyong\all_file\test\my_outo_web\common\basepage.py", line 50, in __waite_ele_exists
     WebDriverWait(self.driver, time_out).until(EC.presence_of_element_located(loc))
@@ -16,61 +16,23 @@ selenium.common.exceptions.NoSuchWindowException: Message: no such window: targe
 from unknown error: web view not found
   (Session info: chrome=123.0.6312.59)
 Stacktrace:
-	GetHandleVerifier [0x00007FF6F6837032+63090]
-	(No symbol) [0x00007FF6F67A2C82]
-	(No symbol) [0x00007FF6F663EC65]
-	(No symbol) [0x00007FF6F661CA7C]
-	(No symbol) [0x00007FF6F66AD687]
-	(No symbol) [0x00007FF6F66C2AC1]
-	(No symbol) [0x00007FF6F66A6D83]
-	(No symbol) [0x00007FF6F66783A8]
-	(No symbol) [0x00007FF6F6679441]
-	GetHandleVerifier [0x00007FF6F6C325AD+4238317]
-	GetHandleVerifier [0x00007FF6F6C6F70D+4488525]
-	GetHandleVerifier [0x00007FF6F6C679EF+4456495]
-	GetHandleVerifier [0x00007FF6F6910576+953270]
-	(No symbol) [0x00007FF6F67AE54F]
-	(No symbol) [0x00007FF6F67A9224]
-	(No symbol) [0x00007FF6F67A935B]
-	(No symbol) [0x00007FF6F6799B94]
-	BaseThreadInitThunk [0x00007FFA34BB7344+20]
-	RtlUserThreadStart [0x00007FFA35A226B1+33]
-
-2024-05-07 15:43:04,867:mylog:__waite_ele_exists:basepage.py:52:ERROR:等待(('id', 'activity_bar'))元素存在失败
-Traceback (most recent call last):
-  File "D:\Shiyong\all_file\test\my_outo_web\common\basepage.py", line 50, in __waite_ele_exists
-    WebDriverWait(self.driver, time_out).until(EC.presence_of_element_located(loc))
-  File "C:\Users\Shiyong\.virtualenvs\my_outo_web-5f-m4y8p\lib\site-packages\selenium\webdriver\support\wait.py", line 96, in until
-    value = method(self._driver)
-  File "C:\Users\Shiyong\.virtualenvs\my_outo_web-5f-m4y8p\lib\site-packages\selenium\webdriver\support\expected_conditions.py", line 84, in _predicate
-    return driver.find_element(*locator)
-  File "C:\Users\Shiyong\.virtualenvs\my_outo_web-5f-m4y8p\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 741, in find_element
-    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
-  File "C:\Users\Shiyong\.virtualenvs\my_outo_web-5f-m4y8p\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 347, in execute
-    self.error_handler.check_response(response)
-  File "C:\Users\Shiyong\.virtualenvs\my_outo_web-5f-m4y8p\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 229, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=123.0.6312.59)
-Stacktrace:
-	GetHandleVerifier [0x00007FF6F6837032+63090]
-	(No symbol) [0x00007FF6F67A2C82]
-	(No symbol) [0x00007FF6F663EC65]
-	(No symbol) [0x00007FF6F661CA7C]
-	(No symbol) [0x00007FF6F66AD687]
-	(No symbol) [0x00007FF6F66C2AC1]
-	(No symbol) [0x00007FF6F66A6D83]
-	(No symbol) [0x00007FF6F66783A8]
-	(No symbol) [0x00007FF6F6679441]
-	GetHandleVerifier [0x00007FF6F6C325AD+4238317]
-	GetHandleVerifier [0x00007FF6F6C6F70D+4488525]
-	GetHandleVerifier [0x00007FF6F6C679EF+4456495]
-	GetHandleVerifier [0x00007FF6F6910576+953270]
-	(No symbol) [0x00007FF6F67AE54F]
-	(No symbol) [0x00007FF6F67A9224]
-	(No symbol) [0x00007FF6F67A935B]
-	(No symbol) [0x00007FF6F6799B94]
-	BaseThreadInitThunk [0x00007FFA34BB7344+20]
-	RtlUserThreadStart [0x00007FFA35A226B1+33]
+	GetHandleVerifier [0x00007FF6942C7032+63090]
+	(No symbol) [0x00007FF694232C82]
+	(No symbol) [0x00007FF6940CEC65]
+	(No symbol) [0x00007FF6940ACA7C]
+	(No symbol) [0x00007FF69413D687]
+	(No symbol) [0x00007FF694152AC1]
+	(No symbol) [0x00007FF694136D83]
+	(No symbol) [0x00007FF6941083A8]
+	(No symbol) [0x00007FF694109441]
+	GetHandleVerifier [0x00007FF6946C25AD+4238317]
+	GetHandleVerifier [0x00007FF6946FF70D+4488525]
+	GetHandleVerifier [0x00007FF6946F79EF+4456495]
+	GetHandleVerifier [0x00007FF6943A0576+953270]
+	(No symbol) [0x00007FF69423E54F]
+	(No symbol) [0x00007FF694239224]
+	(No symbol) [0x00007FF69423935B]
+	(No symbol) [0x00007FF694229B94]
+	BaseThreadInitThunk [0x00007FF98F757344+20]
+	RtlUserThreadStart [0x00007FF9906226B1+33]
 

@@ -1,8 +1,10 @@
 # #:@ TIME 2021/12/20   0:01
 # #:@FILE  conftest.py
 # #:@EMAIL  1557225637@QQ.COM
-# import pytest
-# import time
+import pytest
+import time
+
+
 # from common.log import logg
 #
 # from common.log import logg
@@ -31,5 +33,12 @@
 #     yield init_fixture
 #
 #
-# if __name__ == '__main__':
-#     init_fixture()
+
+@pytest.fixture
+def skip_if_goods_number_zero(page_data):
+    if page_data['goods_number'] == 0:
+        pytest.skip("Skipping test because goods_number is 0")
+
+
+if __name__ == '__main__':
+    pass
