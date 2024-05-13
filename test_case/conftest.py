@@ -3,6 +3,8 @@
 # #:@EMAIL  1557225637@QQ.COM
 import pytest
 import time
+# from pages import all_page_data
+from T import get_acc_url_datas
 
 
 # from common.log import logg
@@ -38,6 +40,7 @@ import time
 def skip_if_goods_number_zero(page_data):
     if page_data['goods_number'] == 0:
         pytest.skip("Skipping test because goods_number is 0")
+
 
 
 if __name__ == '__main__':
