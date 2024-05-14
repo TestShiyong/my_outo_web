@@ -21,7 +21,7 @@ def create_driver(is_headers=False):
 
 def take_screenshot(url, list_screenshot_path, base_path, detail_screenshot_path, random_number, quick_shop):
     """
-
+    进入列表页截图 然后进入详情页截图
     :param url:
     :param list_screenshot_path:
     :param detail_screenshot_path:
@@ -87,6 +87,21 @@ def mark_differences(pre_img, online_img, diff_image_path, threshold=30):
 def run_comparison(pro_url, pre_url, base_path, pre_list_screenshots_path, pre_detail_screenshots_path,
                    pro_list_screenshots_path, pro_detail_screenshots_path, list_diff_image_path, detail_diff_image_path,
                    quick_shop, goods_number=None):
+    """
+    多线程 调用对比方法
+    :param pro_url:
+    :param pre_url:
+    :param base_path:
+    :param pre_list_screenshots_path:
+    :param pre_detail_screenshots_path:
+    :param pro_list_screenshots_path:
+    :param pro_detail_screenshots_path:
+    :param list_diff_image_path:
+    :param detail_diff_image_path:
+    :param quick_shop:
+    :param goods_number:
+    :return:
+    """
     # 设置Chrome选项，运行在无界面模式（无GUI）
     random_number = random.randint(1, 60) if not goods_number else random.randint(1, goods_number)
     # 创建两个线程，分别加载预发布和在线环境的截图

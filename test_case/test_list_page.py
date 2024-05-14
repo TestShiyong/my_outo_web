@@ -1,7 +1,7 @@
 import pytest
 
 from common.webpage_screenshot_comparison import run_comparison
-# from pages import all_page_data
+from pages import all_page_data
 from T import get_acc_urls
 
 class TestPageComparison:
