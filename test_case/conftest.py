@@ -4,7 +4,6 @@
 import pytest
 import time
 # from pages import all_page_data
-from T import get_acc_url_datas
 
 
 # from common.log import logg

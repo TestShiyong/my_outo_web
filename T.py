@@ -43,7 +43,7 @@ def get_list_content_goods_number(cat_name, origin_url, country='us', language='
         return 0
 
 
-def get_acc_category_items():
+def get_acc_url_and_cat_name():
     acc_page_data = [
         {'cat_name': 'accessories', 'url': '/all/accessories'},
         {'cat_name': 'groomsmen-accessories', 'url': '/all/groomsmen-accessories'},
@@ -66,7 +66,7 @@ def get_acc_category_items():
     return acc_page_data
 
 
-def generate_page_datas(pro_url, pre_url, category_items, page_name, quick_shop):
+def generate_category_datas(pro_url, pre_url, category_items, page_name, quick_shop):
     """
 
     :param pro_url:
@@ -106,7 +106,7 @@ def generate_page_datas(pro_url, pre_url, category_items, page_name, quick_shop)
 def get_acc_page_data():
     page_name = 'acc'
     quick_shop = True
-    acc_datas = generate_page_datas(PRO_BASE_URL, PRE_BASE_URL, get_acc_category_items(), page_name, quick_shop)
+    acc_datas = generate_category_datas(PRO_BASE_URL, PRE_BASE_URL, get_acc_url_and_cat_name(), page_name, quick_shop)
     return acc_datas
 
 

@@ -1,24 +1,222 @@
-2024-05-11 18:09:34,948:mylog:__waite_ele_exists:basepage.py:57:INFO:等待元素(('id', 'activity_bar'))成功，等待时间为:-0.016000747680664062
-2024-05-11 18:09:35,370:mylog:click_element:basepage.py:88:INFO:在 关闭新客弹窗 行为,点击元素：('xpath', '//button[@aria-label="Close button"]')
-2024-05-11 18:09:35,370:mylog:__waite_ele_visible:basepage.py:29:INFO:在 关闭新客弹窗 行为,等待元素：('xpath', '//button[@aria-label="Close button"]') 可见
-2024-05-11 18:09:35,978:mylog:__waite_ele_visible:basepage.py:41:INFO:等待元素(('xpath', '//button[@aria-label="Close button"]'))成功，等待时间为:-0.6075582504272461
-2024-05-11 18:09:35,978:mylog:get_element:basepage.py:66:INFO:在  关闭新客弹窗  行为,查找元素：('xpath', '//button[@aria-label="Close button"]')
-2024-05-11 18:09:36,070:mylog:__waite_ele_exists:basepage.py:57:INFO:等待元素(('xpath', '//div[@class="quick-shop"]'))成功，等待时间为:-0.017003297805786133
-2024-05-11 18:09:38,096:mylog:click_element:basepage.py:88:INFO:在 随机点击列表页商品 行为,点击元素：('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]')
-2024-05-11 18:09:38,096:mylog:__waite_ele_visible:basepage.py:29:INFO:在 随机点击列表页商品 行为,等待元素：('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]') 可见
-2024-05-11 18:09:38,114:mylog:__waite_ele_visible:basepage.py:41:INFO:等待元素(('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]'))成功，等待时间为:-0.017102956771850586
-2024-05-11 18:09:38,114:mylog:get_element:basepage.py:66:INFO:在  随机点击列表页商品  行为,查找元素：('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]')
-2024-05-11 18:09:41,006:mylog:switch_to_window:basepage.py:150:INFO:成功切换到新窗口
-2024-05-11 18:09:44,457:mylog:__waite_ele_exists:basepage.py:57:INFO:等待元素(('id', 'activity_bar'))成功，等待时间为:-3.4494898319244385
-2024-05-11 18:12:56,717:mylog:__waite_ele_exists:basepage.py:57:INFO:等待元素(('id', 'activity_bar'))成功，等待时间为:-0.014002799987792969
-2024-05-11 18:12:57,146:mylog:click_element:basepage.py:88:INFO:在 关闭新客弹窗 行为,点击元素：('xpath', '//button[@aria-label="Close button"]')
-2024-05-11 18:12:57,146:mylog:__waite_ele_visible:basepage.py:29:INFO:在 关闭新客弹窗 行为,等待元素：('xpath', '//button[@aria-label="Close button"]') 可见
-2024-05-11 18:12:57,744:mylog:__waite_ele_visible:basepage.py:41:INFO:等待元素(('xpath', '//button[@aria-label="Close button"]'))成功，等待时间为:-0.5973179340362549
-2024-05-11 18:12:57,744:mylog:get_element:basepage.py:66:INFO:在  关闭新客弹窗  行为,查找元素：('xpath', '//button[@aria-label="Close button"]')
-2024-05-11 18:12:57,845:mylog:__waite_ele_exists:basepage.py:57:INFO:等待元素(('xpath', '//div[@class="quick-shop"]'))成功，等待时间为:-0.015017032623291016
-2024-05-11 18:12:59,878:mylog:click_element:basepage.py:88:INFO:在 随机点击列表页商品 行为,点击元素：('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]')
-2024-05-11 18:12:59,878:mylog:__waite_ele_visible:basepage.py:29:INFO:在 随机点击列表页商品 行为,等待元素：('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]') 可见
-2024-05-11 18:12:59,899:mylog:__waite_ele_visible:basepage.py:41:INFO:等待元素(('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]'))成功，等待时间为:-0.018520832061767578
-2024-05-11 18:12:59,899:mylog:get_element:basepage.py:66:INFO:在  随机点击列表页商品  行为,查找元素：('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]')
-2024-05-11 18:13:02,326:mylog:switch_to_window:basepage.py:150:INFO:成功切换到新窗口
-2024-05-11 18:13:06,428:mylog:__waite_ele_exists:basepage.py:57:INFO:等待元素(('id', 'activity_bar'))成功，等待时间为:-4.102757215499878
+2024-05-26 18:19:24,374:mylog:__waite_ele_exists:basepage.py:57:INFO:等待元素(('id', 'activity_bar'))成功，等待时间为:-0.011001825332641602
+2024-05-26 18:19:24,630:mylog:click_element:basepage.py:88:INFO:在 关闭新客弹窗 行为,点击元素：('xpath', '//button[@aria-label="Close button"]')
+2024-05-26 18:19:24,630:mylog:__waite_ele_visible:basepage.py:29:INFO:在 关闭新客弹窗 行为,等待元素：('xpath', '//button[@aria-label="Close button"]') 可见
+2024-05-26 18:19:25,295:mylog:__waite_ele_exists:basepage.py:57:INFO:等待元素(('id', 'activity_bar'))成功，等待时间为:-0.017003774642944336
+2024-05-26 18:19:26,030:mylog:click_element:basepage.py:88:INFO:在 关闭新客弹窗 行为,点击元素：('xpath', '//button[@aria-label="Close button"]')
+2024-05-26 18:19:26,030:mylog:__waite_ele_visible:basepage.py:29:INFO:在 关闭新客弹窗 行为,等待元素：('xpath', '//button[@aria-label="Close button"]') 可见
+2024-05-26 18:19:46,786:mylog:__waite_ele_visible:basepage.py:36:ERROR:等待(('xpath', '//button[@aria-label="Close button"]'))元素可见失败
+Traceback (most recent call last):
+  File "D:\Shiyong\all_file\test\my_outo_web\common\basepage.py", line 34, in __waite_ele_visible
+    WebDriverWait(self.driver, time_out).until(EC.visibility_of_element_located(loc))
+  File "C:\Users\Shiyong\.virtualenvs\my_outo_web-5f-m4y8p\lib\site-packages\selenium\webdriver\support\wait.py", line 105, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF74A817032+63090]
+	(No symbol) [0x00007FF74A782C82]
+	(No symbol) [0x00007FF74A61EC65]
+	(No symbol) [0x00007FF74A66499D]
+	(No symbol) [0x00007FF74A664ADC]
+	(No symbol) [0x00007FF74A6A5B37]
+	(No symbol) [0x00007FF74A68701F]
+	(No symbol) [0x00007FF74A6A3412]
+	(No symbol) [0x00007FF74A686D83]
+	(No symbol) [0x00007FF74A6583A8]
+	(No symbol) [0x00007FF74A659441]
+	GetHandleVerifier [0x00007FF74AC125AD+4238317]
+	GetHandleVerifier [0x00007FF74AC4F70D+4488525]
+	GetHandleVerifier [0x00007FF74AC479EF+4456495]
+	GetHandleVerifier [0x00007FF74A8F0576+953270]
+	(No symbol) [0x00007FF74A78E54F]
+	(No symbol) [0x00007FF74A789224]
+	(No symbol) [0x00007FF74A78935B]
+	(No symbol) [0x00007FF74A779B94]
+	BaseThreadInitThunk [0x00007FF9A76D7344+20]
+	RtlUserThreadStart [0x00007FF9A7C026B1+33]
+
+2024-05-26 18:19:48,250:mylog:__waite_ele_visible:basepage.py:36:ERROR:等待(('xpath', '//button[@aria-label="Close button"]'))元素可见失败
+Traceback (most recent call last):
+  File "D:\Shiyong\all_file\test\my_outo_web\common\basepage.py", line 34, in __waite_ele_visible
+    WebDriverWait(self.driver, time_out).until(EC.visibility_of_element_located(loc))
+  File "C:\Users\Shiyong\.virtualenvs\my_outo_web-5f-m4y8p\lib\site-packages\selenium\webdriver\support\wait.py", line 105, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF74A817032+63090]
+	(No symbol) [0x00007FF74A782C82]
+	(No symbol) [0x00007FF74A61EC65]
+	(No symbol) [0x00007FF74A66499D]
+	(No symbol) [0x00007FF74A664ADC]
+	(No symbol) [0x00007FF74A6A5B37]
+	(No symbol) [0x00007FF74A68701F]
+	(No symbol) [0x00007FF74A6A3412]
+	(No symbol) [0x00007FF74A686D83]
+	(No symbol) [0x00007FF74A6583A8]
+	(No symbol) [0x00007FF74A659441]
+	GetHandleVerifier [0x00007FF74AC125AD+4238317]
+	GetHandleVerifier [0x00007FF74AC4F70D+4488525]
+	GetHandleVerifier [0x00007FF74AC479EF+4456495]
+	GetHandleVerifier [0x00007FF74A8F0576+953270]
+	(No symbol) [0x00007FF74A78E54F]
+	(No symbol) [0x00007FF74A789224]
+	(No symbol) [0x00007FF74A78935B]
+	(No symbol) [0x00007FF74A779B94]
+	BaseThreadInitThunk [0x00007FF9A76D7344+20]
+	RtlUserThreadStart [0x00007FF9A7C026B1+33]
+
+2024-05-26 18:19:48,954:mylog:click_element:basepage.py:88:INFO:在 随机点击列表页商品 行为,点击元素：('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]')
+2024-05-26 18:19:48,954:mylog:__waite_ele_visible:basepage.py:29:INFO:在 随机点击列表页商品 行为,等待元素：('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]') 可见
+2024-05-26 18:19:48,979:mylog:__waite_ele_visible:basepage.py:41:INFO:等待元素(('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]'))成功，等待时间为:-0.025008201599121094
+2024-05-26 18:19:48,979:mylog:get_element:basepage.py:66:INFO:在  随机点击列表页商品  行为,查找元素：('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]')
+2024-05-26 18:19:50,384:mylog:click_element:basepage.py:88:INFO:在 随机点击列表页商品 行为,点击元素：('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]')
+2024-05-26 18:19:50,384:mylog:__waite_ele_visible:basepage.py:29:INFO:在 随机点击列表页商品 行为,等待元素：('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]') 可见
+2024-05-26 18:19:50,409:mylog:__waite_ele_visible:basepage.py:41:INFO:等待元素(('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]'))成功，等待时间为:-0.02499079704284668
+2024-05-26 18:19:50,409:mylog:get_element:basepage.py:66:INFO:在  随机点击列表页商品  行为,查找元素：('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]')
+2024-05-26 18:19:50,542:mylog:click_element:basepage.py:93:ERROR:点击元素失败随机点击列表页商品
+Traceback (most recent call last):
+  File "D:\Shiyong\all_file\test\my_outo_web\common\basepage.py", line 91, in click_element
+    loc_obj.click()
+  File "C:\Users\Shiyong\.virtualenvs\my_outo_web-5f-m4y8p\lib\site-packages\selenium\webdriver\remote\webelement.py", line 94, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\Users\Shiyong\.virtualenvs\my_outo_web-5f-m4y8p\lib\site-packages\selenium\webdriver\remote\webelement.py", line 395, in _execute
+    return self._parent.execute(command, params)
+  File "C:\Users\Shiyong\.virtualenvs\my_outo_web-5f-m4y8p\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\Shiyong\.virtualenvs\my_outo_web-5f-m4y8p\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element <a data-v-614257de="" href="/products/azazie-maren-allure-black-a-line-v-neck-lace-chiffon-floor-length-bridesmaid-dress/171952" aria-label="Azazie Maren Allure 4501" tabindex="0" data-datalayer-category="PlusSizeGowns" data-datalayer-label="PlusSizeGowns_Regular_Click" target="_blank" class="">...</a> is not clickable at point (526, 258). Other element would receive the click: <div data-v-049dcbff="" data-v-136b0b4a="" data-v-7ba6c324="" class="az-dialog popup-center-new-user">...</div>
+  (Session info: chrome=123.0.6312.59)
+Stacktrace:
+	GetHandleVerifier [0x00007FF74A817032+63090]
+	(No symbol) [0x00007FF74A782C82]
+	(No symbol) [0x00007FF74A61EC65]
+	(No symbol) [0x00007FF74A66BB34]
+	(No symbol) [0x00007FF74A669954]
+	(No symbol) [0x00007FF74A667164]
+	(No symbol) [0x00007FF74A665EF9]
+	(No symbol) [0x00007FF74A65A708]
+	(No symbol) [0x00007FF74A686FDA]
+	(No symbol) [0x00007FF74A65A00A]
+	(No symbol) [0x00007FF74A6871F0]
+	(No symbol) [0x00007FF74A6A3412]
+	(No symbol) [0x00007FF74A686D83]
+	(No symbol) [0x00007FF74A6583A8]
+	(No symbol) [0x00007FF74A659441]
+	GetHandleVerifier [0x00007FF74AC125AD+4238317]
+	GetHandleVerifier [0x00007FF74AC4F70D+4488525]
+	GetHandleVerifier [0x00007FF74AC479EF+4456495]
+	GetHandleVerifier [0x00007FF74A8F0576+953270]
+	(No symbol) [0x00007FF74A78E54F]
+	(No symbol) [0x00007FF74A789224]
+	(No symbol) [0x00007FF74A78935B]
+	(No symbol) [0x00007FF74A779B94]
+	BaseThreadInitThunk [0x00007FF9A76D7344+20]
+	RtlUserThreadStart [0x00007FF9A7C026B1+33]
+
+2024-05-26 18:19:51,936:mylog:click_element:basepage.py:93:ERROR:点击元素失败随机点击列表页商品
+Traceback (most recent call last):
+  File "D:\Shiyong\all_file\test\my_outo_web\common\basepage.py", line 91, in click_element
+    loc_obj.click()
+  File "C:\Users\Shiyong\.virtualenvs\my_outo_web-5f-m4y8p\lib\site-packages\selenium\webdriver\remote\webelement.py", line 94, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\Users\Shiyong\.virtualenvs\my_outo_web-5f-m4y8p\lib\site-packages\selenium\webdriver\remote\webelement.py", line 395, in _execute
+    return self._parent.execute(command, params)
+  File "C:\Users\Shiyong\.virtualenvs\my_outo_web-5f-m4y8p\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\Shiyong\.virtualenvs\my_outo_web-5f-m4y8p\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element <a data-v-614257de="" href="/products/azazie-maren-allure-black-a-line-v-neck-lace-chiffon-floor-length-bridesmaid-dress/171952" aria-label="Azazie Maren Allure 4501" tabindex="0" data-datalayer-category="PlusSizeGowns" data-datalayer-label="PlusSizeGowns_Regular_Click" target="_blank" class="">...</a> is not clickable at point (526, 258). Other element would receive the click: <div data-v-049dcbff="" data-v-136b0b4a="" data-v-7ba6c324="" class="az-dialog popup-center-new-user">...</div>
+  (Session info: chrome=123.0.6312.59)
+Stacktrace:
+	GetHandleVerifier [0x00007FF74A817032+63090]
+	(No symbol) [0x00007FF74A782C82]
+	(No symbol) [0x00007FF74A61EC65]
+	(No symbol) [0x00007FF74A66BB34]
+	(No symbol) [0x00007FF74A669954]
+	(No symbol) [0x00007FF74A667164]
+	(No symbol) [0x00007FF74A665EF9]
+	(No symbol) [0x00007FF74A65A708]
+	(No symbol) [0x00007FF74A686FDA]
+	(No symbol) [0x00007FF74A65A00A]
+	(No symbol) [0x00007FF74A6871F0]
+	(No symbol) [0x00007FF74A6A3412]
+	(No symbol) [0x00007FF74A686D83]
+	(No symbol) [0x00007FF74A6583A8]
+	(No symbol) [0x00007FF74A659441]
+	GetHandleVerifier [0x00007FF74AC125AD+4238317]
+	GetHandleVerifier [0x00007FF74AC4F70D+4488525]
+	GetHandleVerifier [0x00007FF74AC479EF+4456495]
+	GetHandleVerifier [0x00007FF74A8F0576+953270]
+	(No symbol) [0x00007FF74A78E54F]
+	(No symbol) [0x00007FF74A789224]
+	(No symbol) [0x00007FF74A78935B]
+	(No symbol) [0x00007FF74A779B94]
+	BaseThreadInitThunk [0x00007FF9A76D7344+20]
+	RtlUserThreadStart [0x00007FF9A7C026B1+33]
+
+2024-05-26 18:20:08,031:mylog:__waite_ele_exists:basepage.py:57:INFO:等待元素(('id', 'activity_bar'))成功，等待时间为:-0.014000415802001953
+2024-05-26 18:20:08,741:mylog:click_element:basepage.py:88:INFO:在 关闭新客弹窗 行为,点击元素：('xpath', '//button[@aria-label="Close button"]')
+2024-05-26 18:20:08,742:mylog:__waite_ele_visible:basepage.py:29:INFO:在 关闭新客弹窗 行为,等待元素：('xpath', '//button[@aria-label="Close button"]') 可见
+2024-05-26 18:20:08,837:mylog:__waite_ele_visible:basepage.py:41:INFO:等待元素(('xpath', '//button[@aria-label="Close button"]'))成功，等待时间为:-0.09502220153808594
+2024-05-26 18:20:08,837:mylog:get_element:basepage.py:66:INFO:在  关闭新客弹窗  行为,查找元素：('xpath', '//button[@aria-label="Close button"]')
+2024-05-26 18:20:11,030:mylog:click_element:basepage.py:88:INFO:在 随机点击列表页商品 行为,点击元素：('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]')
+2024-05-26 18:20:11,031:mylog:__waite_ele_visible:basepage.py:29:INFO:在 随机点击列表页商品 行为,等待元素：('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]') 可见
+2024-05-26 18:20:11,057:mylog:__waite_ele_visible:basepage.py:41:INFO:等待元素(('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]'))成功，等待时间为:-0.025995254516601562
+2024-05-26 18:20:11,057:mylog:get_element:basepage.py:66:INFO:在  随机点击列表页商品  行为,查找元素：('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]')
+2024-05-26 18:20:13,238:mylog:switch_to_window:basepage.py:150:INFO:成功切换到新窗口
+2024-05-26 18:20:16,867:mylog:__waite_ele_exists:basepage.py:57:INFO:等待元素(('id', 'activity_bar'))成功，等待时间为:-3.629559278488159
+2024-05-26 18:20:25,259:mylog:__waite_ele_exists:basepage.py:57:INFO:等待元素(('id', 'activity_bar'))成功，等待时间为:-0.013003110885620117
+2024-05-26 18:20:25,515:mylog:click_element:basepage.py:88:INFO:在 关闭新客弹窗 行为,点击元素：('xpath', '//button[@aria-label="Close button"]')
+2024-05-26 18:20:25,515:mylog:__waite_ele_visible:basepage.py:29:INFO:在 关闭新客弹窗 行为,等待元素：('xpath', '//button[@aria-label="Close button"]') 可见
+2024-05-26 18:20:26,083:mylog:__waite_ele_visible:basepage.py:41:INFO:等待元素(('xpath', '//button[@aria-label="Close button"]'))成功，等待时间为:-0.5681729316711426
+2024-05-26 18:20:26,083:mylog:get_element:basepage.py:66:INFO:在  关闭新客弹窗  行为,查找元素：('xpath', '//button[@aria-label="Close button"]')
+2024-05-26 18:20:28,260:mylog:click_element:basepage.py:88:INFO:在 随机点击列表页商品 行为,点击元素：('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]')
+2024-05-26 18:20:28,260:mylog:__waite_ele_visible:basepage.py:29:INFO:在 随机点击列表页商品 行为,等待元素：('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]') 可见
+2024-05-26 18:20:28,284:mylog:__waite_ele_visible:basepage.py:41:INFO:等待元素(('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]'))成功，等待时间为:-0.023675203323364258
+2024-05-26 18:20:28,284:mylog:get_element:basepage.py:66:INFO:在  随机点击列表页商品  行为,查找元素：('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]')
+2024-05-26 18:20:32,659:mylog:switch_to_window:basepage.py:150:INFO:成功切换到新窗口
+2024-05-26 18:20:33,902:mylog:__waite_ele_exists:basepage.py:57:INFO:等待元素(('id', 'activity_bar'))成功，等待时间为:-1.241292953491211
+2024-05-26 18:20:50,358:mylog:__waite_ele_exists:basepage.py:57:INFO:等待元素(('id', 'activity_bar'))成功，等待时间为:-0.012004852294921875
+2024-05-26 18:20:51,125:mylog:click_element:basepage.py:88:INFO:在 关闭新客弹窗 行为,点击元素：('xpath', '//button[@aria-label="Close button"]')
+2024-05-26 18:20:51,126:mylog:__waite_ele_visible:basepage.py:29:INFO:在 关闭新客弹窗 行为,等待元素：('xpath', '//button[@aria-label="Close button"]') 可见
+2024-05-26 18:20:51,206:mylog:__waite_ele_visible:basepage.py:41:INFO:等待元素(('xpath', '//button[@aria-label="Close button"]'))成功，等待时间为:-0.08038330078125
+2024-05-26 18:20:51,207:mylog:get_element:basepage.py:66:INFO:在  关闭新客弹窗  行为,查找元素：('xpath', '//button[@aria-label="Close button"]')
+2024-05-26 18:20:53,365:mylog:click_element:basepage.py:88:INFO:在 随机点击列表页商品 行为,点击元素：('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]')
+2024-05-26 18:20:53,366:mylog:__waite_ele_visible:basepage.py:29:INFO:在 随机点击列表页商品 行为,等待元素：('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]') 可见
+2024-05-26 18:20:53,390:mylog:__waite_ele_visible:basepage.py:41:INFO:等待元素(('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]'))成功，等待时间为:-0.02400517463684082
+2024-05-26 18:20:53,391:mylog:get_element:basepage.py:66:INFO:在  随机点击列表页商品  行为,查找元素：('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]')
+2024-05-26 18:20:56,338:mylog:switch_to_window:basepage.py:150:INFO:成功切换到新窗口
+2024-05-26 18:20:59,868:mylog:__waite_ele_exists:basepage.py:57:INFO:等待元素(('id', 'activity_bar'))成功，等待时间为:-3.5296833515167236
+2024-05-26 18:21:02,097:mylog:__waite_ele_exists:basepage.py:57:INFO:等待元素(('id', 'activity_bar'))成功，等待时间为:-0.02300262451171875
+2024-05-26 18:21:02,386:mylog:click_element:basepage.py:88:INFO:在 关闭新客弹窗 行为,点击元素：('xpath', '//button[@aria-label="Close button"]')
+2024-05-26 18:21:02,387:mylog:__waite_ele_visible:basepage.py:29:INFO:在 关闭新客弹窗 行为,等待元素：('xpath', '//button[@aria-label="Close button"]') 可见
+2024-05-26 18:21:02,964:mylog:__waite_ele_visible:basepage.py:41:INFO:等待元素(('xpath', '//button[@aria-label="Close button"]'))成功，等待时间为:-0.5771386623382568
+2024-05-26 18:21:02,964:mylog:get_element:basepage.py:66:INFO:在  关闭新客弹窗  行为,查找元素：('xpath', '//button[@aria-label="Close button"]')
+2024-05-26 18:21:05,166:mylog:click_element:basepage.py:88:INFO:在 随机点击列表页商品 行为,点击元素：('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]')
+2024-05-26 18:21:05,166:mylog:__waite_ele_visible:basepage.py:29:INFO:在 随机点击列表页商品 行为,等待元素：('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]') 可见
+2024-05-26 18:21:05,190:mylog:__waite_ele_visible:basepage.py:41:INFO:等待元素(('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]'))成功，等待时间为:-0.024048566818237305
+2024-05-26 18:21:05,190:mylog:get_element:basepage.py:66:INFO:在  随机点击列表页商品  行为,查找元素：('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]')
+2024-05-26 18:21:09,001:mylog:switch_to_window:basepage.py:150:INFO:成功切换到新窗口
+2024-05-26 18:21:14,412:mylog:__waite_ele_exists:basepage.py:57:INFO:等待元素(('id', 'activity_bar'))成功，等待时间为:-5.411758661270142
+2024-05-26 18:21:42,993:mylog:__waite_ele_exists:basepage.py:57:INFO:等待元素(('id', 'activity_bar'))成功，等待时间为:-0.02100396156311035
+2024-05-26 18:21:43,273:mylog:click_element:basepage.py:88:INFO:在 关闭新客弹窗 行为,点击元素：('xpath', '//button[@aria-label="Close button"]')
+2024-05-26 18:21:43,273:mylog:__waite_ele_visible:basepage.py:29:INFO:在 关闭新客弹窗 行为,等待元素：('xpath', '//button[@aria-label="Close button"]') 可见
+2024-05-26 18:21:43,846:mylog:__waite_ele_visible:basepage.py:41:INFO:等待元素(('xpath', '//button[@aria-label="Close button"]'))成功，等待时间为:-0.5722532272338867
+2024-05-26 18:21:43,846:mylog:get_element:basepage.py:66:INFO:在  关闭新客弹窗  行为,查找元素：('xpath', '//button[@aria-label="Close button"]')
+2024-05-26 18:21:44,038:mylog:__waite_ele_exists:basepage.py:57:INFO:等待元素(('id', 'activity_bar'))成功，等待时间为:-0.01800370216369629
+2024-05-26 18:21:44,312:mylog:click_element:basepage.py:88:INFO:在 关闭新客弹窗 行为,点击元素：('xpath', '//button[@aria-label="Close button"]')
+2024-05-26 18:21:44,312:mylog:__waite_ele_visible:basepage.py:29:INFO:在 关闭新客弹窗 行为,等待元素：('xpath', '//button[@aria-label="Close button"]') 可见
+2024-05-26 18:21:44,903:mylog:__waite_ele_visible:basepage.py:41:INFO:等待元素(('xpath', '//button[@aria-label="Close button"]'))成功，等待时间为:-0.5905952453613281
+2024-05-26 18:21:44,903:mylog:get_element:basepage.py:66:INFO:在  关闭新客弹窗  行为,查找元素：('xpath', '//button[@aria-label="Close button"]')
+2024-05-26 18:21:46,048:mylog:click_element:basepage.py:88:INFO:在 随机点击列表页商品 行为,点击元素：('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]')
+2024-05-26 18:21:46,048:mylog:__waite_ele_visible:basepage.py:29:INFO:在 随机点击列表页商品 行为,等待元素：('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]') 可见
+2024-05-26 18:21:46,075:mylog:__waite_ele_visible:basepage.py:41:INFO:等待元素(('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]'))成功，等待时间为:-0.027013301849365234
+2024-05-26 18:21:46,076:mylog:get_element:basepage.py:66:INFO:在  随机点击列表页商品  行为,查找元素：('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]')
+2024-05-26 18:21:47,087:mylog:click_element:basepage.py:88:INFO:在 随机点击列表页商品 行为,点击元素：('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]')
+2024-05-26 18:21:47,087:mylog:__waite_ele_visible:basepage.py:29:INFO:在 随机点击列表页商品 行为,等待元素：('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]') 可见
+2024-05-26 18:21:47,114:mylog:__waite_ele_visible:basepage.py:41:INFO:等待元素(('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]'))成功，等待时间为:-0.027007341384887695
+2024-05-26 18:21:47,114:mylog:get_element:basepage.py:66:INFO:在  随机点击列表页商品  行为,查找元素：('xpath', '//a[@data-datalayer-category="PlusSizeGowns"]')
+2024-05-26 18:21:48,546:mylog:switch_to_window:basepage.py:150:INFO:成功切换到新窗口
+2024-05-26 18:21:51,854:mylog:switch_to_window:basepage.py:150:INFO:成功切换到新窗口
+2024-05-26 18:21:54,310:mylog:__waite_ele_exists:basepage.py:57:INFO:等待元素(('id', 'activity_bar'))成功，等待时间为:-5.763666868209839
+2024-05-26 18:21:54,381:mylog:__waite_ele_exists:basepage.py:57:INFO:等待元素(('id', 'activity_bar'))成功，等待时间为:-2.5263547897338867

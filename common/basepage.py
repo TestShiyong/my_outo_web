@@ -198,6 +198,12 @@ class BasePage:
             os.makedirs(directory)
 
     def save_screenshot(self, base_path, directory):
+        """
+        截图保存 并且判断路径是否存在 并创建
+        :param base_path:
+        :param directory:
+        :return:
+        """
         self.create_directory_if_not_exists(base_path)
         self.driver.save_screenshot(directory)
 

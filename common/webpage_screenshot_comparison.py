@@ -5,6 +5,9 @@ from PIL import Image
 import cv2
 from common.basepage import BasePage
 import random
+from base_path import ensure_path_exists
+import multiprocessing
+import os
 
 
 def create_driver(is_headers=False):
@@ -64,6 +67,8 @@ def compare_images(pre_img, online_img, threshold=30):
 
 
 def mark_differences(pre_img, online_img, diff_image_path, threshold=30):
+    ensure_path_exists(os.path.dirname(diff_image_path))
+
     # 使用绝对差异找到不同之处
     diff = cv2.absdiff(pre_img, online_img)
     diff_gray = cv2.cvtColor(diff, cv2.COLOR_BGR2GRAY)

@@ -21,6 +21,14 @@ config_file_dir = os.path.join(base, 'pytest.ini')
 screenshots_path = os.path.join(base_dir, 'output', 'screenshot')
 
 
+def ensure_path_exists(path):
+    if not os.path.exists(path):
+        os.makedirs(path)
+        print(f"Path '{path}' created.")
+    else:
+        print(f"Path '{path}' already exists.")
+
+
 if __name__ == '__main__':
     print(config_file_dir)
     print()
